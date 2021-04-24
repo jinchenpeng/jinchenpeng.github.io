@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>PogHub</title>
+  
+  
+  <link href="https://pogyang.gitee.io/atom.xml" rel="self"/>
+  
+  <link href="https://pogyang.gitee.io/"/>
+  <updated>2021-04-24T15:53:20.424Z</updated>
+  <id>https://pogyang.gitee.io/</id>
+  
+  <author>
+    <name>PogYang</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>npm</title>
+    <link href="https://pogyang.gitee.io/a1345b2b/"/>
+    <id>https://pogyang.gitee.io/a1345b2b/</id>
+    <published>2021-03-09T10:56:51.000Z</published>
+    <updated>2021-04-24T15:53:20.424Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;npm是内置于node.js中的，首先要装node&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;常见命令&quot;&gt;&lt;a href=&quot;#常见命令&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="node" scheme="https://pogyang.gitee.io/tags/node/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>centos常用命令</title>
+    <link href="https://pogyang.gitee.io/b1991f70/"/>
+    <id>https://pogyang.gitee.io/b1991f70/</id>
+    <published>2021-01-22T02:34:37.000Z</published>
+    <updated>2021-04-24T15:53:20.416Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#</summary>
+        
+      
+    
+    
+    
+    
+    <category term="centos" scheme="https://pogyang.gitee.io/tags/centos/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MobaXterm</title>
+    <link href="https://pogyang.gitee.io/93b67f41/"/>
+    <id>https://pogyang.gitee.io/93b67f41/</id>
+    <published>2021-01-21T03:26:25.000Z</published>
+    <updated>2021-04-24T15:53:20.427Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;罗列一些使用时出现的问题&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;无法上传文件至根目录&quot;&gt;&lt;a href=&quot;#无法上传文件至根目录&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="tools" scheme="https://pogyang.gitee.io/tags/tools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>centos7常用扩展</title>
+    <link href="https://pogyang.gitee.io/655baa85/"/>
+    <id>https://pogyang.gitee.io/655baa85/</id>
+    <published>2021-01-18T08:28:15.000Z</published>
+    <updated>2021-04-24T15:53:20.416Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;安装命令&quot;&gt;&lt;a href=&quot;#安装命令&quot; class=&quot;headerlink&quot; title=&quot;安装命令&quot;&gt;&lt;/a&gt;安装命令&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;先切换到root用户&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;figure</summary>
+        
+      
+    
+    
+    
+    
+    <category term="centos" scheme="https://pogyang.gitee.io/tags/centos/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>docker实用教程</title>
+    <link href="https://pogyang.gitee.io/e4a68452/"/>
+    <id>https://pogyang.gitee.io/e4a68452/</id>
+    <published>2021-01-15T02:45:04.000Z</published>
+    <updated>2021-04-24T15:53:20.417Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;安装docker&quot;&gt;&lt;a href=&quot;#安装docker&quot; class=&quot;headerlink&quot; title=&quot;安装docker&quot;&gt;&lt;/a&gt;安装docker&lt;/h2&gt;&lt;p&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
+        
+      
+    
+    
+    
+    
+    <category term="docker" scheme="https://pogyang.gitee.io/tags/docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vim使用教程</title>
+    <link href="https://pogyang.gitee.io/102383ca/"/>
+    <id>https://pogyang.gitee.io/102383ca/</id>
+    <published>2020-12-01T03:15:41.000Z</published>
+    <updated>2021-04-24T15:53:20.427Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;vim 文本编辑的神器&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;基本使用&quot;&gt;&lt;a href=&quot;#基本使用&quot; class=&quot;headerlink&quot; title=&quot;基本使用&quot;&gt;&lt;/a&gt;基本使用&lt;/h2&gt;&lt;p&gt;&lt;figure</summary>
+        
+      
+    
+    
+    
+    
+    <category term="vim" scheme="https://pogyang.gitee.io/tags/vim/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>正则小册子</title>
+    <link href="https://pogyang.gitee.io/cd2f8932/"/>
+    <id>https://pogyang.gitee.io/cd2f8932/</id>
+    <published>2020-11-26T02:51:00.000Z</published>
+    <updated>2021-04-24T15:53:20.426Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;正则可以说是一个比较通用的规则，用于匹配指定的内容&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;基本使用&quot;&gt;&lt;a href=&quot;#基本使用&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="regex" scheme="https://pogyang.gitee.io/tags/regex/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mysql实用教程</title>
+    <link href="https://pogyang.gitee.io/da8dfb54/"/>
+    <id>https://pogyang.gitee.io/da8dfb54/</id>
+    <published>2020-10-22T16:00:00.000Z</published>
+    <updated>2021-04-24T15:53:20.424Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;数据库概念&quot;&gt;&lt;a href=&quot;#数据库概念&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="mysql" scheme="https://pogyang.gitee.io/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mybatis实用教程</title>
+    <link href="https://pogyang.gitee.io/aa8d898b/"/>
+    <id>https://pogyang.gitee.io/aa8d898b/</id>
+    <published>2020-10-21T16:00:00.000Z</published>
+    <updated>2021-04-24T15:53:20.423Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;对比框架&quot;&gt;&lt;a href=&quot;#对比框架&quot; class=&quot;headerlink&quot; title=&quot;对比框架&quot;&gt;&lt;/a&gt;对比框架&lt;/h2&gt;&lt;div class=&quot;table-container&quot;&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th</summary>
+        
+      
+    
+    
+    
+    
+    <category term="mybatis" scheme="https://pogyang.gitee.io/tags/mybatis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git实用教程</title>
+    <link href="https://pogyang.gitee.io/607d6c62/"/>
+    <id>https://pogyang.gitee.io/607d6c62/</id>
+    <published>2020-10-13T16:00:00.000Z</published>
+    <updated>2021-04-24T15:53:20.418Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;安装Git&quot;&gt;&lt;a href=&quot;#安装Git&quot; class=&quot;headerlink&quot; title=&quot;安装Git&quot;&gt;&lt;/a&gt;安装Git&lt;/h2&gt;&lt;p&gt;windows用的比较多，就装windows里吧😀 </summary>
+        
+      
+    
+    
+    
+    
+    <category term="git" scheme="https://pogyang.gitee.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>dotnet-cnblog使用教程</title>
+    <link href="https://pogyang.gitee.io/ed547d5e/"/>
+    <id>https://pogyang.gitee.io/ed547d5e/</id>
+    <published>2020-10-10T16:00:00.000Z</published>
+    <updated>2021-04-24T15:53:20.417Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;安装-Net-Core-SDK&quot;&gt;&lt;a href=&quot;#安装-Net-Core-SDK&quot; class=&quot;headerlink&quot; title=&quot;安装.Net Core SDK&quot;&gt;&lt;/a&gt;安装.Net Core SDK&lt;/h2&gt;&lt;p&gt;下载地址： &lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="dotnet" scheme="https://pogyang.gitee.io/tags/dotnet/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>github提速方案大全</title>
+    <link href="https://pogyang.gitee.io/3bf84628/"/>
+    <id>https://pogyang.gitee.io/3bf84628/</id>
+    <published>2020-10-10T16:00:00.000Z</published>
+    <updated>2021-04-24T15:53:20.419Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Github镜像&quot;&gt;&lt;a href=&quot;#Github镜像&quot; class=&quot;headerlink&quot; title=&quot;Github镜像&quot;&gt;&lt;/a&gt;Github镜像&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;完整同步Github&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="github" scheme="https://pogyang.gitee.io/tags/github/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>中介者模式</title>
+    <link href="https://pogyang.gitee.io/d036071c/"/>
+    <id>https://pogyang.gitee.io/d036071c/</id>
+    <published>2020-10-10T16:00:00.000Z</published>
+    <updated>2021-04-24T15:53:20.429Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;根据面向对象的七大设计原则中的迪米特原则，也就是最少知道原则实现低耦合高内聚的设计思想，将对象之间的交互隔离开来，但不缺乏功能的完整性，这就是中介者模式的核心思想，简单来说就是其他所有需要交互的对象都与中介者对象相关联，通过中介者的操作实现对象间的交互&lt;/p&gt;
+&lt;p&gt;&lt;co</summary>
+        
+      
+    
+    
+    
+    
+    <category term="设计模式" scheme="https://pogyang.gitee.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>代理模式</title>
+    <link href="https://pogyang.gitee.io/7b510e10/"/>
+    <id>https://pogyang.gitee.io/7b510e10/</id>
+    <published>2020-10-10T16:00:00.000Z</published>
+    <updated>2021-04-24T15:53:20.430Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;代理模式作为一种比较常用的设计模式，顾名思义，你需要一个牛逼的代理，打个比方，你要是想要接触一些大牌明星，明面上基本上见不着的，这时候你就需要一个访问层，比如她的经理人之类的，间接地传达一些消息，否者会对明星的生活带来很多困扰，基于这种思想，代理模式也就很好理解了，就是为了</summary>
+        
+      
+    
+    
+    
+    
+    <category term="设计模式" scheme="https://pogyang.gitee.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>原型模式</title>
+    <link href="https://pogyang.gitee.io/91ad9ce3/"/>
+    <id>https://pogyang.gitee.io/91ad9ce3/</id>
+    <published>2020-10-10T16:00:00.000Z</published>
+    <updated>2021-04-24T15:53:20.430Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;参照了许多大佬的博客，这里先给出自己一些关于原型模式的理解，从名字本身来讲，原型就是一个model，就像前人造的轮子的蓝图，你依葫芦画瓢再克隆出来一个不就行了，思想还是很简单的，关键在于它的实现&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    
+    <category term="设计模式" scheme="https://pogyang.gitee.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>外观模式</title>
+    <link href="https://pogyang.gitee.io/f7de8aa8/"/>
+    <id>https://pogyang.gitee.io/f7de8aa8/</id>
+    <published>2020-10-10T16:00:00.000Z</published>
+    <updated>2021-04-24T15:53:20.430Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;一般来说系统之间的关联都是比较复杂的，如何管理这些关系呢，这时候就需要外观模式的协调，使客户端调用复杂的子系统变得简单，可以说外观模式是一种控制器，客户端想要用哪个功能只要熟悉外观对象提供的方法即可&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;IUser.java&lt;/code&gt;&lt;br&gt;&lt;fi</summary>
+        
+      
+    
+    
+    
+    
+    <category term="设计模式" scheme="https://pogyang.gitee.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>工厂模式</title>
+    <link href="https://pogyang.gitee.io/54788f73/"/>
+    <id>https://pogyang.gitee.io/54788f73/</id>
+    <published>2020-10-10T16:00:00.000Z</published>
+    <updated>2021-04-24T15:53:20.431Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;对于工厂模式而言，可能大家并不会陌生，顾名思义所谓工厂就是啥事都给你做了，顾客等着消费产品就好了，首先咋们就来聊聊这简单工厂模式的道道&lt;/p&gt;
+&lt;p&gt;废话不多说先上代码&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Operation.java&lt;/code&gt;&lt;br&gt;&lt;figure</summary>
+        
+      
+    
+    
+    
+    
+    <category term="设计模式" scheme="https://pogyang.gitee.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>建造者模式</title>
+    <link href="https://pogyang.gitee.io/fe816c3c/"/>
+    <id>https://pogyang.gitee.io/fe816c3c/</id>
+    <published>2020-10-10T16:00:00.000Z</published>
+    <updated>2021-04-24T15:53:20.431Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;当我们需要创建一个复杂对象的时候往往需要利用到建造者模式(创建型模式)，典型的像StringBuilder类，其原理就是将复杂对象拆分为简单对象来构建，各个简单对象是通过一定的算法来组装的，用不同的表示就能通过同样的创建过程创建出不同的复杂对象&lt;/p&gt;
+&lt;p&gt;下面我们通过一</summary>
+        
+      
+    
+    
+    
+    
+    <category term="设计模式" scheme="https://pogyang.gitee.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>模板方法模式</title>
+    <link href="https://pogyang.gitee.io/ecc6414b/"/>
+    <id>https://pogyang.gitee.io/ecc6414b/</id>
+    <published>2020-10-10T16:00:00.000Z</published>
+    <updated>2021-04-24T15:53:20.432Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;模板方法模式作为一个行为模式，他的目的在于从顶层逻辑中封装一些有顺序的抽象方法的集合，形成一种逻辑骨架，然后用子类实现，且子类对象调用模板封装的方法时与其定义的顺序有关&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;AbstractTemplate.java&lt;/code&gt;&lt;br&gt;&lt;figure</summary>
+        
+      
+    
+    
+    
+    
+    <category term="设计模式" scheme="https://pogyang.gitee.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>策略模式</title>
+    <link href="https://pogyang.gitee.io/72e3b671/"/>
+    <id>https://pogyang.gitee.io/72e3b671/</id>
+    <published>2020-10-10T16:00:00.000Z</published>
+    <updated>2021-04-24T15:53:20.432Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;解决问题的方式很多，不同的策略或许能更高效地找到最合适的方式，在有些情况下，需要对策略的实现方式进行切换，使得程序变得灵活，通过这种方式封装不同的算法，避免多重条件的判断，完善程序的扩展性，且策略模式是一种行为型模式&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Strategy.java&lt;/</summary>
+        
+      
+    
+    
+    
+    
+    <category term="设计模式" scheme="https://pogyang.gitee.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+</feed>
