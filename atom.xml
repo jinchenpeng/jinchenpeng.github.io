@@ -3,11 +3,11 @@
   <title>PogHub</title>
   
   
-  <link href="https://pogyang.gitee.io/atom.xml" rel="self"/>
+  <link href="https://jinchenpeng.github.io/atom.xml" rel="self"/>
   
-  <link href="https://pogyang.gitee.io/"/>
+  <link href="https://jinchenpeng.github.io/"/>
   <updated>2021-04-24T15:53:20.424Z</updated>
-  <id>https://pogyang.gitee.io/</id>
+  <id>https://jinchenpeng.github.io/</id>
   
   <author>
     <name>PogYang</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>npm</title>
-    <link href="https://pogyang.gitee.io/a1345b2b/"/>
-    <id>https://pogyang.gitee.io/a1345b2b/</id>
+    <link href="https://jinchenpeng.github.io/a1345b2b/"/>
+    <id>https://jinchenpeng.github.io/a1345b2b/</id>
     <published>2021-03-09T10:56:51.000Z</published>
     <updated>2021-04-24T15:53:20.424Z</updated>
     
@@ -38,14 +38,14 @@
     
     
     
-    <category term="node" scheme="https://pogyang.gitee.io/tags/node/"/>
+    <category term="node" scheme="https://jinchenpeng.github.io/tags/node/"/>
     
   </entry>
   
   <entry>
     <title>centos常用命令</title>
-    <link href="https://pogyang.gitee.io/b1991f70/"/>
-    <id>https://pogyang.gitee.io/b1991f70/</id>
+    <link href="https://jinchenpeng.github.io/b1991f70/"/>
+    <id>https://jinchenpeng.github.io/b1991f70/</id>
     <published>2021-01-22T02:34:37.000Z</published>
     <updated>2021-04-24T15:53:20.416Z</updated>
     
@@ -61,14 +61,14 @@
     
     
     
-    <category term="centos" scheme="https://pogyang.gitee.io/tags/centos/"/>
+    <category term="centos" scheme="https://jinchenpeng.github.io/tags/centos/"/>
     
   </entry>
   
   <entry>
     <title>MobaXterm</title>
-    <link href="https://pogyang.gitee.io/93b67f41/"/>
-    <id>https://pogyang.gitee.io/93b67f41/</id>
+    <link href="https://jinchenpeng.github.io/93b67f41/"/>
+    <id>https://jinchenpeng.github.io/93b67f41/</id>
     <published>2021-01-21T03:26:25.000Z</published>
     <updated>2021-04-24T15:53:20.427Z</updated>
     
@@ -87,14 +87,14 @@
     
     
     
-    <category term="tools" scheme="https://pogyang.gitee.io/tags/tools/"/>
+    <category term="tools" scheme="https://jinchenpeng.github.io/tags/tools/"/>
     
   </entry>
   
   <entry>
     <title>centos7常用扩展</title>
-    <link href="https://pogyang.gitee.io/655baa85/"/>
-    <id>https://pogyang.gitee.io/655baa85/</id>
+    <link href="https://jinchenpeng.github.io/655baa85/"/>
+    <id>https://jinchenpeng.github.io/655baa85/</id>
     <published>2021-01-18T08:28:15.000Z</published>
     <updated>2021-04-24T15:53:20.416Z</updated>
     
@@ -113,14 +113,14 @@
     
     
     
-    <category term="centos" scheme="https://pogyang.gitee.io/tags/centos/"/>
+    <category term="centos" scheme="https://jinchenpeng.github.io/tags/centos/"/>
     
   </entry>
   
   <entry>
     <title>docker实用教程</title>
-    <link href="https://pogyang.gitee.io/e4a68452/"/>
-    <id>https://pogyang.gitee.io/e4a68452/</id>
+    <link href="https://jinchenpeng.github.io/e4a68452/"/>
+    <id>https://jinchenpeng.github.io/e4a68452/</id>
     <published>2021-01-15T02:45:04.000Z</published>
     <updated>2021-04-24T15:53:20.417Z</updated>
     
@@ -136,14 +136,14 @@
     
     
     
-    <category term="docker" scheme="https://pogyang.gitee.io/tags/docker/"/>
+    <category term="docker" scheme="https://jinchenpeng.github.io/tags/docker/"/>
     
   </entry>
   
   <entry>
     <title>vim使用教程</title>
-    <link href="https://pogyang.gitee.io/102383ca/"/>
-    <id>https://pogyang.gitee.io/102383ca/</id>
+    <link href="https://jinchenpeng.github.io/102383ca/"/>
+    <id>https://jinchenpeng.github.io/102383ca/</id>
     <published>2020-12-01T03:15:41.000Z</published>
     <updated>2021-04-24T15:53:20.427Z</updated>
     
@@ -162,14 +162,14 @@
     
     
     
-    <category term="vim" scheme="https://pogyang.gitee.io/tags/vim/"/>
+    <category term="vim" scheme="https://jinchenpeng.github.io/tags/vim/"/>
     
   </entry>
   
   <entry>
     <title>正则小册子</title>
-    <link href="https://pogyang.gitee.io/cd2f8932/"/>
-    <id>https://pogyang.gitee.io/cd2f8932/</id>
+    <link href="https://jinchenpeng.github.io/cd2f8932/"/>
+    <id>https://jinchenpeng.github.io/cd2f8932/</id>
     <published>2020-11-26T02:51:00.000Z</published>
     <updated>2021-04-24T15:53:20.426Z</updated>
     
@@ -188,14 +188,14 @@
     
     
     
-    <category term="regex" scheme="https://pogyang.gitee.io/tags/regex/"/>
+    <category term="regex" scheme="https://jinchenpeng.github.io/tags/regex/"/>
     
   </entry>
   
   <entry>
     <title>mysql实用教程</title>
-    <link href="https://pogyang.gitee.io/da8dfb54/"/>
-    <id>https://pogyang.gitee.io/da8dfb54/</id>
+    <link href="https://jinchenpeng.github.io/da8dfb54/"/>
+    <id>https://jinchenpeng.github.io/da8dfb54/</id>
     <published>2020-10-22T16:00:00.000Z</published>
     <updated>2021-04-24T15:53:20.424Z</updated>
     
@@ -211,14 +211,14 @@
     
     
     
-    <category term="mysql" scheme="https://pogyang.gitee.io/tags/mysql/"/>
+    <category term="mysql" scheme="https://jinchenpeng.github.io/tags/mysql/"/>
     
   </entry>
   
   <entry>
     <title>mybatis实用教程</title>
-    <link href="https://pogyang.gitee.io/aa8d898b/"/>
-    <id>https://pogyang.gitee.io/aa8d898b/</id>
+    <link href="https://jinchenpeng.github.io/aa8d898b/"/>
+    <id>https://jinchenpeng.github.io/aa8d898b/</id>
     <published>2020-10-21T16:00:00.000Z</published>
     <updated>2021-04-24T15:53:20.423Z</updated>
     
@@ -238,14 +238,14 @@
     
     
     
-    <category term="mybatis" scheme="https://pogyang.gitee.io/tags/mybatis/"/>
+    <category term="mybatis" scheme="https://jinchenpeng.github.io/tags/mybatis/"/>
     
   </entry>
   
   <entry>
     <title>git实用教程</title>
-    <link href="https://pogyang.gitee.io/607d6c62/"/>
-    <id>https://pogyang.gitee.io/607d6c62/</id>
+    <link href="https://jinchenpeng.github.io/607d6c62/"/>
+    <id>https://jinchenpeng.github.io/607d6c62/</id>
     <published>2020-10-13T16:00:00.000Z</published>
     <updated>2021-04-24T15:53:20.418Z</updated>
     
@@ -261,14 +261,14 @@
     
     
     
-    <category term="git" scheme="https://pogyang.gitee.io/tags/git/"/>
+    <category term="git" scheme="https://jinchenpeng.github.io/tags/git/"/>
     
   </entry>
   
   <entry>
     <title>dotnet-cnblog使用教程</title>
-    <link href="https://pogyang.gitee.io/ed547d5e/"/>
-    <id>https://pogyang.gitee.io/ed547d5e/</id>
+    <link href="https://jinchenpeng.github.io/ed547d5e/"/>
+    <id>https://jinchenpeng.github.io/ed547d5e/</id>
     <published>2020-10-10T16:00:00.000Z</published>
     <updated>2021-04-24T15:53:20.417Z</updated>
     
@@ -284,14 +284,14 @@
     
     
     
-    <category term="dotnet" scheme="https://pogyang.gitee.io/tags/dotnet/"/>
+    <category term="dotnet" scheme="https://jinchenpeng.github.io/tags/dotnet/"/>
     
   </entry>
   
   <entry>
     <title>github提速方案大全</title>
-    <link href="https://pogyang.gitee.io/3bf84628/"/>
-    <id>https://pogyang.gitee.io/3bf84628/</id>
+    <link href="https://jinchenpeng.github.io/3bf84628/"/>
+    <id>https://jinchenpeng.github.io/3bf84628/</id>
     <published>2020-10-10T16:00:00.000Z</published>
     <updated>2021-04-24T15:53:20.419Z</updated>
     
@@ -310,14 +310,14 @@
     
     
     
-    <category term="github" scheme="https://pogyang.gitee.io/tags/github/"/>
+    <category term="github" scheme="https://jinchenpeng.github.io/tags/github/"/>
     
   </entry>
   
   <entry>
     <title>中介者模式</title>
-    <link href="https://pogyang.gitee.io/d036071c/"/>
-    <id>https://pogyang.gitee.io/d036071c/</id>
+    <link href="https://jinchenpeng.github.io/d036071c/"/>
+    <id>https://jinchenpeng.github.io/d036071c/</id>
     <published>2020-10-10T16:00:00.000Z</published>
     <updated>2021-04-24T15:53:20.429Z</updated>
     
@@ -334,14 +334,14 @@
     
     
     
-    <category term="设计模式" scheme="https://pogyang.gitee.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    <category term="设计模式" scheme="https://jinchenpeng.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>代理模式</title>
-    <link href="https://pogyang.gitee.io/7b510e10/"/>
-    <id>https://pogyang.gitee.io/7b510e10/</id>
+    <link href="https://jinchenpeng.github.io/7b510e10/"/>
+    <id>https://jinchenpeng.github.io/7b510e10/</id>
     <published>2020-10-10T16:00:00.000Z</published>
     <updated>2021-04-24T15:53:20.430Z</updated>
     
@@ -357,14 +357,14 @@
     
     
     
-    <category term="设计模式" scheme="https://pogyang.gitee.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    <category term="设计模式" scheme="https://jinchenpeng.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>原型模式</title>
-    <link href="https://pogyang.gitee.io/91ad9ce3/"/>
-    <id>https://pogyang.gitee.io/91ad9ce3/</id>
+    <link href="https://jinchenpeng.github.io/91ad9ce3/"/>
+    <id>https://jinchenpeng.github.io/91ad9ce3/</id>
     <published>2020-10-10T16:00:00.000Z</published>
     <updated>2021-04-24T15:53:20.430Z</updated>
     
@@ -383,14 +383,14 @@
     
     
     
-    <category term="设计模式" scheme="https://pogyang.gitee.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    <category term="设计模式" scheme="https://jinchenpeng.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>外观模式</title>
-    <link href="https://pogyang.gitee.io/f7de8aa8/"/>
-    <id>https://pogyang.gitee.io/f7de8aa8/</id>
+    <link href="https://jinchenpeng.github.io/f7de8aa8/"/>
+    <id>https://jinchenpeng.github.io/f7de8aa8/</id>
     <published>2020-10-10T16:00:00.000Z</published>
     <updated>2021-04-24T15:53:20.430Z</updated>
     
@@ -407,14 +407,14 @@
     
     
     
-    <category term="设计模式" scheme="https://pogyang.gitee.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    <category term="设计模式" scheme="https://jinchenpeng.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>工厂模式</title>
-    <link href="https://pogyang.gitee.io/54788f73/"/>
-    <id>https://pogyang.gitee.io/54788f73/</id>
+    <link href="https://jinchenpeng.github.io/54788f73/"/>
+    <id>https://jinchenpeng.github.io/54788f73/</id>
     <published>2020-10-10T16:00:00.000Z</published>
     <updated>2021-04-24T15:53:20.431Z</updated>
     
@@ -432,14 +432,14 @@
     
     
     
-    <category term="设计模式" scheme="https://pogyang.gitee.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    <category term="设计模式" scheme="https://jinchenpeng.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>建造者模式</title>
-    <link href="https://pogyang.gitee.io/fe816c3c/"/>
-    <id>https://pogyang.gitee.io/fe816c3c/</id>
+    <link href="https://jinchenpeng.github.io/fe816c3c/"/>
+    <id>https://jinchenpeng.github.io/fe816c3c/</id>
     <published>2020-10-10T16:00:00.000Z</published>
     <updated>2021-04-24T15:53:20.431Z</updated>
     
@@ -456,14 +456,14 @@
     
     
     
-    <category term="设计模式" scheme="https://pogyang.gitee.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    <category term="设计模式" scheme="https://jinchenpeng.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>模板方法模式</title>
-    <link href="https://pogyang.gitee.io/ecc6414b/"/>
-    <id>https://pogyang.gitee.io/ecc6414b/</id>
+    <link href="https://jinchenpeng.github.io/ecc6414b/"/>
+    <id>https://jinchenpeng.github.io/ecc6414b/</id>
     <published>2020-10-10T16:00:00.000Z</published>
     <updated>2021-04-24T15:53:20.432Z</updated>
     
@@ -480,14 +480,14 @@
     
     
     
-    <category term="设计模式" scheme="https://pogyang.gitee.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    <category term="设计模式" scheme="https://jinchenpeng.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>策略模式</title>
-    <link href="https://pogyang.gitee.io/72e3b671/"/>
-    <id>https://pogyang.gitee.io/72e3b671/</id>
+    <link href="https://jinchenpeng.github.io/72e3b671/"/>
+    <id>https://jinchenpeng.github.io/72e3b671/</id>
     <published>2020-10-10T16:00:00.000Z</published>
     <updated>2021-04-24T15:53:20.432Z</updated>
     
@@ -504,7 +504,7 @@
     
     
     
-    <category term="设计模式" scheme="https://pogyang.gitee.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    <category term="设计模式" scheme="https://jinchenpeng.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
