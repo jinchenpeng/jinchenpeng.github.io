@@ -6,7 +6,7 @@
   <link href="https://jinchenpeng.github.io/atom.xml" rel="self"/>
   
   <link href="https://jinchenpeng.github.io/"/>
-  <updated>2021-04-24T15:53:20.424Z</updated>
+  <updated>2021-05-05T09:06:16.568Z</updated>
   <id>https://jinchenpeng.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://jinchenpeng.github.io/0/"/>
+    <id>https://jinchenpeng.github.io/0/</id>
+    <published>2021-05-05T09:06:16.568Z</published>
+    <updated>2021-05-05T09:06:16.568Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;做人，你的情绪不能一点火就着，一滴水就灭。一碰到点事儿就捶胸顿足，惊天动地。加了几天班，就希望别人知道你有多辛苦，刚认识一个人，他就知道你家里有几亩地，田里几头牛。&lt;/p&gt;
+&lt;p&gt;与别人一言不合，就发朋友圈以示愤怒，随便遇到一个人对你好一点，梦想就从山川河流变成厨房与爱。去</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>npm</title>
@@ -474,30 +496,6 @@
         
     <summary type="html">&lt;p&gt;模板方法模式作为一个行为模式，他的目的在于从顶层逻辑中封装一些有顺序的抽象方法的集合，形成一种逻辑骨架，然后用子类实现，且子类对象调用模板封装的方法时与其定义的顺序有关&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;AbstractTemplate.java&lt;/code&gt;&lt;br&gt;&lt;figure</summary>
-        
-      
-    
-    
-    
-    
-    <category term="设计模式" scheme="https://jinchenpeng.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>策略模式</title>
-    <link href="https://jinchenpeng.github.io/72e3b671/"/>
-    <id>https://jinchenpeng.github.io/72e3b671/</id>
-    <published>2020-10-10T16:00:00.000Z</published>
-    <updated>2021-04-24T15:53:20.432Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;解决问题的方式很多，不同的策略或许能更高效地找到最合适的方式，在有些情况下，需要对策略的实现方式进行切换，使得程序变得灵活，通过这种方式封装不同的算法，避免多重条件的判断，完善程序的扩展性，且策略模式是一种行为型模式&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Strategy.java&lt;/</summary>
         
       
     
