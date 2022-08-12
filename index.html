@@ -167,6 +167,77 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-什么是SDK" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/08/12/%E4%BB%80%E4%B9%88%E6%98%AFSDK/" class="article-date">
+  	<time datetime="2022-08-12T06:42:43.069Z" itemprop="datePublished">2022-08-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/08/12/%E4%BB%80%E4%B9%88%E6%98%AFSDK/">
+        什么是SDK？
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>SDK 就是 Software Development Kit 的缩写，中文意思就是【软件开发工具包】。这是一个覆盖面相当广泛的名词，可以这么说：辅助开发某一类软件的相关文档、范例和工具的集合都可以叫做【SDK】。详细来说</p>
+<ol>
+<li>SDK的外语全称是Software Development Kit，中文为：软件开发工具包，一般都是一些软件工程师为特定的软件包、软件框架、硬件平台、操作系统等建立应用软件时的开发工具的集合；</li>
+<li>可以将其理解为，由第三方服务商提供的实现软件产品某项功能的工具包，里面一般以集合kpi和文档、范例、工具的形式出现，也就是由很多类型文件的集合；</li>
+<li>通常SDK是由专业性质的公司提供专业服务的集合，比如提供安卓开发工具、或者基于硬件开发的服务等。也有针对某项软件功能的SDK，如推送技术、图像识别技术、移动支付技术等，同时资源优势类的公司也提供资源共享的SDK，如一些广告SDK提供盈利渠道，分发SDK提供产品下载渠道。</li>
+<li>目前在国内互联网环境中大部分的SDK都是免费的， 为了鼓励开发者使用其系统或者语言，许多 SDK 是免费提供的。软件工程师通常从目标系统开发者那里获得软件开发包，也可以直接从互联网下载，有时也被作为营销手段。例如，营销公司会免费提供构建SDK 以鼓励人们使用它，从而会吸引更多人由于能免费为其编程而购买其构件。</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2022/08/12/%E4%BB%80%E4%B9%88%E6%98%AFSDK/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="什么是SDK？">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-反转链表" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -197,7 +268,6 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>面试快手，手撕代码的时候发现既不是关键代码模式也不是ACM，而是从数据结构开始写起，有点懵。记录在此，一起学习！</p>
-<p>面试快手，手撕代码的时候发现既不是关键代码模式也不是<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=ACM&spm=1001.2101.3001.7020">ACM</a>，而是从数据结构开始写起，有点懵。记录在此，一起学习！</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//链表结构体</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ListNode</span>&#123;</span><br><span class="line">    <span class="type">int</span> val;</span><br><span class="line">    ListNode next=<span class="literal">null</span>;</span><br><span class="line">    ListNode(<span class="type">int</span> val)&#123;</span><br><span class="line">        <span class="built_in">this</span>.val = val;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//包括主函数建立链表和关键代码两部分</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">node</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ListNode</span>(<span class="number">0</span>);</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">head</span> <span class="operator">=</span> node ;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">            node.next = <span class="keyword">new</span> <span class="title class_">ListNode</span>(i);</span><br><span class="line">            node = node.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//0 1 2 3 4</span></span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">listNode</span> <span class="operator">=</span> power(head);</span><br><span class="line">        <span class="keyword">while</span>(listNode!=<span class="literal">null</span>)&#123;</span><br><span class="line">            System.out.println(listNode.val);</span><br><span class="line">            listNode=listNode.next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">static</span> ListNode <span class="title function_">power</span><span class="params">(ListNode head)</span>&#123;</span><br><span class="line">        ListNode pre=<span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">while</span>(head!=<span class="literal">null</span>)&#123;</span><br><span class="line">            ListNode temp=head.next;</span><br><span class="line">            head.next=pre;</span><br><span class="line">            pre=head;</span><br><span class="line">            head=temp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span>  pre;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
