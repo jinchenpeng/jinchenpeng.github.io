@@ -167,6 +167,74 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-反转链表" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/08/12/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/" class="article-date">
+  	<time datetime="2022-08-12T00:41:03.894Z" itemprop="datePublished">2022-08-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/08/12/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/">
+        反转链表
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>面试快手，手撕代码的时候发现既不是关键代码模式也不是ACM，而是从数据结构开始写起，有点懵。记录在此，一起学习！</p>
+<p>面试快手，手撕代码的时候发现既不是关键代码模式也不是<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=ACM&spm=1001.2101.3001.7020">ACM</a>，而是从数据结构开始写起，有点懵。记录在此，一起学习！</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//链表结构体</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ListNode</span>&#123;</span><br><span class="line">    <span class="type">int</span> val;</span><br><span class="line">    ListNode next=<span class="literal">null</span>;</span><br><span class="line">    ListNode(<span class="type">int</span> val)&#123;</span><br><span class="line">        <span class="built_in">this</span>.val = val;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//包括主函数建立链表和关键代码两部分</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">node</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ListNode</span>(<span class="number">0</span>);</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">head</span> <span class="operator">=</span> node ;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">            node.next = <span class="keyword">new</span> <span class="title class_">ListNode</span>(i);</span><br><span class="line">            node = node.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//0 1 2 3 4</span></span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">listNode</span> <span class="operator">=</span> power(head);</span><br><span class="line">        <span class="keyword">while</span>(listNode!=<span class="literal">null</span>)&#123;</span><br><span class="line">            System.out.println(listNode.val);</span><br><span class="line">            listNode=listNode.next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">static</span> ListNode <span class="title function_">power</span><span class="params">(ListNode head)</span>&#123;</span><br><span class="line">        ListNode pre=<span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">while</span>(head!=<span class="literal">null</span>)&#123;</span><br><span class="line">            ListNode temp=head.next;</span><br><span class="line">            head.next=pre;</span><br><span class="line">            pre=head;</span><br><span class="line">            head=temp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span>  pre;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2022/08/12/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="反转链表">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-万叶-辉金盛夏" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -196,15 +264,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>我常在雨中赶路，难免被雨水蒙住眼睛，</p>
-<p>有许多次，几乎看不见前方。</p>
+        <p>我常在雨中赶路，难免被雨水迷住眼睛，</p>
+<p>有许多次，几乎看不清前方。</p>
 <p>终有一日抵达了山巅，</p>
 <p>自顶峰望去，</p>
 <p>云在脚下，</p>
-<p>耳畔唯有清风袅袅，</p>
+<p>耳畔唯有清风袅袅。</p>
 <p>真正的高山，</p>
 <p>真正的空明澄澈之心，</p>
-<p>无我，无恨，无念，无愿，</p>
+<p>无我，无恨，无念，无愿。</p>
 <p>踏上旅途吧，我即是清风，再长的路也会有相遇，</p>
 <p>人生尚未结束，何处不是故乡？</p>
 
