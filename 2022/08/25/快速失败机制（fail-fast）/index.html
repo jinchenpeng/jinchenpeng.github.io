@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>快速失败机制（fail-fast） | 万叶的博客</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="快速失败机制出现在我们对List、Map等容器遍历的过程中删除元素的场景。 案例1：List 123456789101112131415161718public class Test &amp;#123;    public static void main(String[] args) &amp;#123;        List&lt;String&gt; list &#x3D; new ArrayList&lt;&amp;g">
+<meta property="og:type" content="article">
+<meta property="og:title" content="快速失败机制（fail-fast）">
+<meta property="og:url" content="http://example.com/2022/08/25/%E5%BF%AB%E9%80%9F%E5%A4%B1%E8%B4%A5%E6%9C%BA%E5%88%B6%EF%BC%88fail-fast%EF%BC%89/index.html">
+<meta property="og:site_name" content="万叶的博客">
+<meta property="og:description" content="快速失败机制出现在我们对List、Map等容器遍历的过程中删除元素的场景。 案例1：List 123456789101112131415161718public class Test &amp;#123;    public static void main(String[] args) &amp;#123;        List&lt;String&gt; list &#x3D; new ArrayList&lt;&amp;g">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-08-24T17:31:18.110Z">
+<meta property="article:modified_time" content="2022-08-24T17:33:12.116Z">
+<meta property="article:author" content="枫原万叶">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="万叶的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fblog%2F202203%2F22%2F20220322210911_efe61.thumb.1000_0.jpg&amp;refer=http%3A%2F%2Fc-ssl.duitang.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=auto?sec=1662798186&amp;t=742d560efd4e173cb12e1d47c0dc1c99" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+			<h1 class="header-author"><a href="/">枫原万叶</a></h1>
+		</hgroup>
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">Home</a></li>
+				        
+							<li><a href="/archives">Archives</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="half-header-menu">
+						<a class="hide">Home</a>
+						<a>Tags</a>
+						<a>Links</a>
+						<a>About</a>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/jinchenpeng" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/achen-32-56" title="zhihu">zhihu</a>
+					        
+						</div>
+						<!-- music -->
+						
+							<!-- <div style="position: absolute; bottom: 120px; left: auto; width: 85%;"> -->
+							<div style="position: absolute; left: auto; width: 85%;">
+								<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=220 height=86 src="//music.163.com/outchain/player?type=2&id=1833805540&auto=1&height=66"></iframe>
+							</div>
+						
+					</nav>
+				</section>
+				
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">总有地上的生灵，敢于直面雷霆的微光</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fblog%2F202203%2F22%2F20220322210911_efe61.thumb.1000_0.jpg&amp;refer=http%3A%2F%2Fc-ssl.duitang.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=auto?sec=1662798186&amp;t=742d560efd4e173cb12e1d47c0dc1c99" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">Home</a></li>
+		        
+					<li><a href="/archives">Archives</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/jinchenpeng" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/achen-32-56" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-快速失败机制（fail-fast）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/08/25/%E5%BF%AB%E9%80%9F%E5%A4%B1%E8%B4%A5%E6%9C%BA%E5%88%B6%EF%BC%88fail-fast%EF%BC%89/" class="article-date">
+  	<time datetime="2022-08-24T17:31:18.110Z" itemprop="datePublished">2022-08-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      快速失败机制（fail-fast）
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>快速失败机制出现在我们对List、Map等容器遍历的过程中删除元素的场景。</p>
+<p>案例1：List</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        List&lt;String&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        list.add(<span class="string">&quot;1&quot;</span>);</span><br><span class="line">        list.add(<span class="string">&quot;2&quot;</span>);</span><br><span class="line">        list.add(<span class="string">&quot;3&quot;</span>);</span><br><span class="line">        list.add(<span class="string">&quot;4&quot;</span>);</span><br><span class="line">        list.add(<span class="string">&quot;5&quot;</span>);</span><br><span class="line">        Iterator&lt;String&gt; it = list.iterator();</span><br><span class="line">        <span class="keyword">while</span>(it.hasNext())&#123;</span><br><span class="line">            <span class="type">String</span> <span class="variable">next</span> <span class="operator">=</span> it.next();</span><br><span class="line">            <span class="keyword">if</span>(next.equals(<span class="string">&quot;1&quot;</span>))&#123;</span><br><span class="line">                list.remove(next);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(list);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>案例中，使用list的remove方法，来操作iterator中的next对象，会报错，具体错误如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Exception in thread <span class="string">&quot;main&quot;</span> java.util.ConcurrentModificationException</span><br><span class="line">	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:<span class="number">911</span>)</span><br><span class="line">	at java.util.ArrayList$Itr.next(ArrayList.java:<span class="number">861</span>)</span><br><span class="line">	at Test.main(Test.java:<span class="number">15</span>)</span><br></pre></td></tr></table></figure>
+
+<p>需要使用iterator的remove方法，正确的操作应该是</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        List&lt;String&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        list.add(<span class="string">&quot;1&quot;</span>);</span><br><span class="line">        list.add(<span class="string">&quot;2&quot;</span>);</span><br><span class="line">        list.add(<span class="string">&quot;3&quot;</span>);</span><br><span class="line">        list.add(<span class="string">&quot;4&quot;</span>);</span><br><span class="line">        list.add(<span class="string">&quot;5&quot;</span>);</span><br><span class="line">        Iterator&lt;String&gt; it = list.iterator();</span><br><span class="line">        <span class="keyword">while</span>(it.hasNext())&#123;</span><br><span class="line">            <span class="type">String</span> <span class="variable">next</span> <span class="operator">=</span> it.next();</span><br><span class="line">            <span class="keyword">if</span>(next.equals(<span class="string">&quot;1&quot;</span>))&#123;</span><br><span class="line">                <span class="comment">//只修改了这一行</span></span><br><span class="line">                it.remove();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(list);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>案例二：Map</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test01</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        HashMap&lt;String, String&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        map.put(<span class="string">&quot;张三&quot;</span>,<span class="string">&quot;22&quot;</span>);</span><br><span class="line">        map.put(<span class="string">&quot;李四&quot;</span>,<span class="string">&quot;20&quot;</span>);</span><br><span class="line">        map.put(<span class="string">&quot;王五&quot;</span>,<span class="string">&quot;23&quot;</span>);</span><br><span class="line">        map.put(<span class="string">&quot;小马&quot;</span>,<span class="string">&quot;24&quot;</span>);</span><br><span class="line">        map.put(<span class="string">&quot;小米&quot;</span>,<span class="string">&quot;25&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span>(Map.Entry&lt;String,String&gt; entry : map.entrySet())&#123;</span><br><span class="line">            <span class="keyword">if</span>(entry.getValue().equals(<span class="string">&quot;20&quot;</span>))&#123;</span><br><span class="line">                map.remove(entry.getKey());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(map);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>报错信息</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Exception in thread <span class="string">&quot;main&quot;</span> java.util.ConcurrentModificationException</span><br><span class="line">	at java.util.HashMap$HashIterator.nextNode(HashMap.java:<span class="number">1469</span>)</span><br><span class="line">	at java.util.HashMap$EntryIterator.next(HashMap.java:<span class="number">1503</span>)</span><br><span class="line">	at java.util.HashMap$EntryIterator.next(HashMap.java:<span class="number">1501</span>)</span><br><span class="line">	at Test01.main(Test01.java:<span class="number">12</span>)</span><br></pre></td></tr></table></figure>
+
+<p>正确处理方法就是使用Iterator</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test01</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        HashMap&lt;String, String&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        map.put(<span class="string">&quot;张三&quot;</span>,<span class="string">&quot;22&quot;</span>);</span><br><span class="line">        map.put(<span class="string">&quot;李四&quot;</span>,<span class="string">&quot;20&quot;</span>);</span><br><span class="line">        map.put(<span class="string">&quot;王五&quot;</span>,<span class="string">&quot;23&quot;</span>);</span><br><span class="line">        map.put(<span class="string">&quot;小马&quot;</span>,<span class="string">&quot;24&quot;</span>);</span><br><span class="line">        map.put(<span class="string">&quot;小米&quot;</span>,<span class="string">&quot;25&quot;</span>);</span><br><span class="line"></span><br><span class="line">        Set&lt;Map.Entry&lt;String, String&gt;&gt; set = map.entrySet();</span><br><span class="line">        Iterator&lt;Map.Entry&lt;String, String&gt;&gt; it = set.iterator();</span><br><span class="line">        <span class="keyword">while</span>(it.hasNext())&#123;</span><br><span class="line">            Map.Entry&lt;String, String&gt; next = it.next();</span><br><span class="line">            <span class="keyword">if</span>(next.getValue().equals(<span class="string">&quot;20&quot;</span>))&#123;</span><br><span class="line">                it.remove();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(map);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/08/25/%E5%B0%8F%E6%B5%8B%E9%AA%8C/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          小测验
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/08/25/Java%E5%91%98%E5%B7%A5%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java简单员工管理系统</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2022 枫原万叶
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>
