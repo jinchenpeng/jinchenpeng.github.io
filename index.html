@@ -155,62 +155,6 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-小测验" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2022/08/25/%E5%B0%8F%E6%B5%8B%E9%AA%8C/" class="article-date">
-  	<time datetime="2022-08-24T17:31:22.005Z" itemprop="datePublished">2022-08-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/25/%E5%B0%8F%E6%B5%8B%E9%AA%8C/">
-        小测验
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Student</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        HashMap&lt;String, String&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        map.put(<span class="string">&quot;东邪&quot;</span>,<span class="string">&quot;36&quot;</span>);</span><br><span class="line">        map.put(<span class="string">&quot;西毒&quot;</span>,<span class="literal">null</span>);</span><br><span class="line">        map.put(<span class="string">&quot;南帝&quot;</span>,<span class="string">&quot;&quot;</span>);</span><br><span class="line">        map.put(<span class="string">&quot;北丐&quot;</span>,<span class="string">&quot;25&quot;</span>);</span><br><span class="line">        map.put(<span class="string">&quot;神通&quot;</span>,<span class="string">&quot;15&quot;</span>);</span><br><span class="line">        map.put(<span class="string">&quot;郭靖&quot;</span>,<span class="string">&quot;25&quot;</span>);</span><br><span class="line"></span><br><span class="line">        HashMap&lt;String, List&gt; resultmap = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span>(Map.Entry&lt;String,String&gt; entry: map.entrySet())&#123;</span><br><span class="line">            <span class="keyword">if</span>(entry.getValue()!=<span class="literal">null</span> &amp;&amp; entry.getValue()!=<span class="string">&quot;&quot;</span> &amp;&amp; Integer.parseInt(entry.getValue())&gt;<span class="number">18</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(resultmap.containsKey(entry.getValue()))&#123;</span><br><span class="line">                    <span class="type">List</span> <span class="variable">list</span> <span class="operator">=</span> resultmap.get(entry.getValue());</span><br><span class="line">                    list.add(entry.getKey());</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    List&lt;String&gt; list1 = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">                    list1.add( entry.getKey());</span><br><span class="line">                    resultmap.put(entry.getValue(),list1);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(resultmap);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
     <article id="post-快速失败机制（fail-fast）" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -471,6 +415,8 @@
 <td>25</td>
 </tr>
 </tbody></table>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Student</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        HashMap&lt;String, String&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        map.put(<span class="string">&quot;东邪&quot;</span>,<span class="string">&quot;36&quot;</span>);</span><br><span class="line">        map.put(<span class="string">&quot;西毒&quot;</span>,<span class="literal">null</span>);</span><br><span class="line">        map.put(<span class="string">&quot;南帝&quot;</span>,<span class="string">&quot;&quot;</span>);</span><br><span class="line">        map.put(<span class="string">&quot;北丐&quot;</span>,<span class="string">&quot;25&quot;</span>);</span><br><span class="line">        map.put(<span class="string">&quot;神通&quot;</span>,<span class="string">&quot;15&quot;</span>);</span><br><span class="line">        map.put(<span class="string">&quot;郭靖&quot;</span>,<span class="string">&quot;25&quot;</span>);</span><br><span class="line"></span><br><span class="line">        HashMap&lt;String, List&gt; resultmap = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span>(Map.Entry&lt;String,String&gt; entry: map.entrySet())&#123;</span><br><span class="line">            <span class="keyword">if</span>(entry.getValue()!=<span class="literal">null</span> &amp;&amp; entry.getValue()!=<span class="string">&quot;&quot;</span> &amp;&amp; Integer.parseInt(entry.getValue())&gt;<span class="number">18</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(resultmap.containsKey(entry.getValue()))&#123;</span><br><span class="line">                    <span class="type">List</span> <span class="variable">list</span> <span class="operator">=</span> resultmap.get(entry.getValue());</span><br><span class="line">                    list.add(entry.getKey());</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    List&lt;String&gt; list1 = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">                    list1.add( entry.getKey());</span><br><span class="line">                    resultmap.put(entry.getValue(),list1);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(resultmap);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -785,6 +731,112 @@
 <p>无我，无恨，无念，无愿。</p>
 <p>踏上旅途吧，我即是清风，再长的路也会有相遇，</p>
 <p>人生尚未结束，何处不是故乡？</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-Java容器" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/08/11/Java%E5%AE%B9%E5%99%A8/" class="article-date">
+  	<time datetime="2022-08-11T07:27:46.070Z" itemprop="datePublished">2022-08-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/08/11/Java%E5%AE%B9%E5%99%A8/">
+        Java容器
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1、Java基本数据类型"><a href="#1、Java基本数据类型" class="headerlink" title="1、Java基本数据类型"></a>1、Java基本数据类型</h1><ul>
+<li>byte（1）</li>
+<li>int（4）</li>
+<li>short（2）</li>
+<li>long（8）</li>
+<li>double（8）</li>
+<li>float（4）</li>
+<li>char（2）</li>
+<li>boolean（1）</li>
+</ul>
+<h1 id="2、Java容器"><a href="#2、Java容器" class="headerlink" title="2、Java容器"></a>2、Java容器</h1><h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><p>List中的元素可以重复，有序</p>
+<p>List是接口，ArrayList和LinkedList是实现类</p>
+<p>List的常用操作包括</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">add(object);</span><br><span class="line">remove(object);</span><br><span class="line">get(i);</span><br><span class="line">size();</span><br><span class="line">contains(object);<span class="comment">//是否包含元素</span></span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;list.size();i++)&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h3><h3 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h3><h2 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h2><p>Set中的元素不可以重复，无序，重复数据添加不进去</p>
+<p>Set是接口，HashSet和TreeSet是实现类</p>
+<p>Set的常用操作包括</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">add(object);</span><br><span class="line">remove(objet);</span><br><span class="line">size();</span><br><span class="line">contains(object);</span><br></pre></td></tr></table></figure>
+
+<h3 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h3><h3 id="TreeSet"><a href="#TreeSet" class="headerlink" title="TreeSet"></a>TreeSet</h3><p>默认进行排序，但不是存储顺序，是大小顺序</p>
+<h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><p>键值对，无序，不重复</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">张三--&gt;13548695742</span><br></pre></td></tr></table></figure>
+
+<p>常用操作</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">put(key,value);</span><br><span class="line">get(key);<span class="comment">//通过key获取到value</span></span><br><span class="line">remove(key);</span><br><span class="line">size();</span><br><span class="line">containsKey();</span><br><span class="line">containsValue();</span><br><span class="line">keySet();<span class="comment">//把Map中的所有键打包成集合返回</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">HashMap</span> <span class="variable">hashMap</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HashMap</span>();</span><br><span class="line">hashMap.put(<span class="string">&quot;jay&quot;</span>,<span class="string">&quot;周杰伦&quot;</span>);</span><br><span class="line">hashMap.put(<span class="string">&quot;wf&quot;</span>,<span class="string">&quot;王菲&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>注意，如果插入key相同的元素，会覆盖掉value</p>
+<h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><h3 id="TreeMap"><a href="#TreeMap" class="headerlink" title="TreeMap"></a>TreeMap</h3><p>根据key排序</p>
+<h2 id="Iterater"><a href="#Iterater" class="headerlink" title="Iterater"></a>Iterater</h2><p>例子</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Set</span> <span class="variable">set</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HashSet</span>();</span><br><span class="line">set.add(<span class="number">123</span>);</span><br><span class="line">set.add(<span class="number">456</span>);</span><br><span class="line">set.add(<span class="number">798</span>);</span><br><span class="line"><span class="type">Iterator</span> <span class="variable">iterator</span> <span class="operator">=</span> set.iterator();</span><br><span class="line"><span class="keyword">while</span>(iterator.hasNext())&#123;</span><br><span class="line">    <span class="type">Object</span> <span class="variable">next</span> <span class="operator">=</span> iterator.next();</span><br><span class="line">    System.out.println(next);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>常用操作</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">next();<span class="comment">//取到下一个元素</span></span><br><span class="line">hasNext();<span class="comment">//判断是否还有下一个元素</span></span><br></pre></td></tr></table></figure>
+
+<p>在Map中拿到的都是Key</p>
+<p>什么是entry？</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">HashMap</span> <span class="variable">map</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HashMap</span>();</span><br><span class="line">map.put(<span class="number">1</span>,<span class="string">&quot;蔡徐坤&quot;</span>);</span><br><span class="line">map.put(<span class="number">2</span>,<span class="string">&quot;鹿晗&quot;</span>);</span><br><span class="line">map.put(<span class="number">3</span>,<span class="string">&quot;吴亦凡&quot;</span>);</span><br><span class="line"><span class="type">Set</span> <span class="variable">set</span> <span class="operator">=</span> map.entrySet();</span><br><span class="line"><span class="type">Iterator</span> <span class="variable">it</span> <span class="operator">=</span> set.iterator();</span><br><span class="line"><span class="keyword">while</span>(it.hasNext())&#123;</span><br><span class="line">Map.<span class="type">Entry</span> <span class="variable">entry</span> <span class="operator">=</span> (Map.Entry) it.next();<span class="comment">//强制类型转换</span></span><br><span class="line">System.out.println(entry.getKey());</span><br><span class="line">System.out.println(entry.getValue());</span><br></pre></td></tr></table></figure>
+
+<h1 id="3、泛型"><a href="#3、泛型" class="headerlink" title="3、泛型"></a>3、泛型</h1><p>List和Set类似</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ArrayList&lt;String&gt; strings = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">strings.add(<span class="string">&quot;a&quot;</span>);</span><br><span class="line">strings.add(<span class="string">&quot;b&quot;</span>);</span><br><span class="line">strings.add(<span class="string">&quot;c&quot;</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> strings.get(<span class="number">1</span>);<span class="comment">//不需要强制类型转换，因为有泛型贴了标签</span></span><br></pre></td></tr></table></figure>
+
+<p>Map</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">HashMap&lt;String, String&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">map.put(<span class="string">&quot;鸣人&quot;</span>,<span class="string">&quot;螺旋丸&quot;</span>);</span><br><span class="line">map.put(<span class="string">&quot;佐助&quot;</span>,<span class="string">&quot;千鸟&quot;</span>);</span><br><span class="line">map.put(<span class="string">&quot;李洛克&quot;</span>,<span class="string">&quot;八门遁甲&quot;</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> map.get(<span class="string">&quot;鸣人&quot;</span>);<span class="comment">//不需要强转</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="4、增强for遍历Map"><a href="#4、增强for遍历Map" class="headerlink" title="4、增强for遍历Map"></a>4、增强for遍历Map</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">HashMap&lt;String, String&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">map.put(<span class="string">&quot;鸣人&quot;</span>,<span class="string">&quot;螺旋丸&quot;</span>);</span><br><span class="line">map.put(<span class="string">&quot;佐助&quot;</span>,<span class="string">&quot;千鸟&quot;</span>);</span><br><span class="line">map.put(<span class="string">&quot;李洛克&quot;</span>,<span class="string">&quot;八门遁甲&quot;</span>);</span><br><span class="line"><span class="keyword">for</span>(Map.Entry&lt;String, String&gt; set : map.entrySet())&#123;</span><br><span class="line">System.out.println(set.getValue());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="5、Collections工具类"><a href="#5、Collections工具类" class="headerlink" title="5、Collections工具类"></a>5、Collections工具类</h1><p>常用方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">max();</span><br><span class="line">min();</span><br><span class="line">sort();</span><br><span class="line">shuffle();</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
