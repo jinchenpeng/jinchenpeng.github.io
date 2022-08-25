@@ -155,6 +155,192 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-LeetCode020：有效的括号" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/08/25/LeetCode020%EF%BC%9A%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/" class="article-date">
+  	<time datetime="2022-08-25T14:53:32.524Z" itemprop="datePublished">2022-08-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/08/25/LeetCode020%EF%BC%9A%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/">
+        LeetCode020：有效的括号
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/valid-parentheses/comments/">20. 有效的括号 - 力扣（LeetCode）</a></p>
+<p>第一种方法比较巧妙，通过不停的将有效的括号替换为空字符串，最后判断字符串是否为零来判断括号是否有效。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isValid</span><span class="params">(String s)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> s.length()/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;len;i++)&#123;</span><br><span class="line">            s = s.replace(<span class="string">&quot;()&quot;</span>,<span class="string">&quot;&quot;</span>).replace(<span class="string">&quot;[]&quot;</span>,<span class="string">&quot;&quot;</span>).replace(<span class="string">&quot;&#123;&#125;&quot;</span>,<span class="string">&quot;&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> s.length()==<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>第二种方法就是栈，仍旧很巧妙，很难想到，只在栈里边存放右括号。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isValid</span><span class="params">(String s)</span> &#123;</span><br><span class="line">        Stack&lt;Character&gt; stack = <span class="keyword">new</span> <span class="title class_">Stack</span>&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">char</span> c: s.toCharArray())&#123;</span><br><span class="line">            <span class="keyword">if</span>(c==<span class="string">&#x27;(&#x27;</span>) stack.push(<span class="string">&#x27;)&#x27;</span>);</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(c==<span class="string">&#x27;[&#x27;</span>) stack.push(<span class="string">&#x27;]&#x27;</span>);</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(c==<span class="string">&#x27;&#123;&#x27;</span>) stack.push(<span class="string">&#x27;&#125;&#x27;</span>);</span><br><span class="line">            <span class="comment">//c!=stack.pop()不仅是判断操作，也是出栈操作</span></span><br><span class="line">            <span class="comment">//如果s都是右括号，没有stack.isEmpty()，直接出栈操作是不对的，会报栈空异常</span></span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(stack.isEmpty()||c!=stack.pop()) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> stack.isEmpty();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>第三种也是用到栈，最容易想到但比较麻烦的办法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isValid</span><span class="params">(String s)</span> &#123;</span><br><span class="line">        Stack&lt;Character&gt; stack = <span class="keyword">new</span> <span class="title class_">Stack</span>&lt;&gt;();</span><br><span class="line">        <span class="type">char</span>[] chars = s.toCharArray();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">char</span> c : chars)&#123;</span><br><span class="line">            <span class="keyword">if</span>(c==<span class="string">&#x27;(&#x27;</span>||c==<span class="string">&#x27;[&#x27;</span>||c==<span class="string">&#x27;&#123;&#x27;</span>)&#123;</span><br><span class="line">                stack.push(c);</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(c==<span class="string">&#x27;)&#x27;</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(stack.isEmpty())&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    <span class="keyword">if</span>(stack.peek()==<span class="string">&#x27;(&#x27;</span>)&#123;</span><br><span class="line">                        stack.pop();</span><br><span class="line">                    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(c==<span class="string">&#x27;]&#x27;</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(stack.isEmpty())&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    <span class="keyword">if</span>(stack.peek()==<span class="string">&#x27;[&#x27;</span>)&#123;</span><br><span class="line">                        stack.pop();</span><br><span class="line">                    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(c==<span class="string">&#x27;&#125;&#x27;</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(stack.isEmpty())&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    <span class="keyword">if</span>(stack.peek()==<span class="string">&#x27;&#123;&#x27;</span>)&#123;</span><br><span class="line">                        stack.pop();</span><br><span class="line">                    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> stack.isEmpty();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>第四种和第三种思路一样，只是换成switch</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isValid</span><span class="params">(String s)</span> &#123;</span><br><span class="line">        Stack&lt;Character&gt; stack = <span class="keyword">new</span> <span class="title class_">Stack</span>&lt;&gt;();</span><br><span class="line">        <span class="type">char</span>[] chars = s.toCharArray();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">char</span> c : chars) &#123;</span><br><span class="line">            <span class="keyword">if</span>(c==<span class="string">&#x27;(&#x27;</span>||c==<span class="string">&#x27;[&#x27;</span>||c==<span class="string">&#x27;&#123;&#x27;</span>) stack.push(c);</span><br><span class="line">            <span class="keyword">if</span>(stack.isEmpty()) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">switch</span>(c)&#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;]&#x27;</span>:</span><br><span class="line">                    <span class="keyword">if</span> (stack.peek()==<span class="string">&#x27;[&#x27;</span>) stack.pop();</span><br><span class="line">                    <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;)&#x27;</span>:</span><br><span class="line">                    <span class="keyword">if</span> (stack.peek()==<span class="string">&#x27;(&#x27;</span>) stack.pop();</span><br><span class="line">                    <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;&#125;&#x27;</span>:</span><br><span class="line">                    <span class="keyword">if</span> (stack.peek()==<span class="string">&#x27;&#123;&#x27;</span>) stack.pop();</span><br><span class="line">                    <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> stack.isEmpty();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-LeetCode014：最长公共前缀" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/08/25/LeetCode014%EF%BC%9A%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%89%8D%E7%BC%80/" class="article-date">
+  	<time datetime="2022-08-25T14:53:28.279Z" itemprop="datePublished">2022-08-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/08/25/LeetCode014%EF%BC%9A%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%89%8D%E7%BC%80/">
+        LeetCode014：最长公共前缀
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/longest-common-prefix/">14. 最长公共前缀 - 力扣（LeetCode）</a></p>
+<p>先选第一个串，认定为最长公共前缀。如果不是的话，就把该串的长度减一，判断是不是前缀有现成的方法startsWith()。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">longestCommonPrefix</span><span class="params">(String[] strs)</span> &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> strs[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(String string : strs)&#123;</span><br><span class="line">            <span class="keyword">while</span>(!string.startsWith(s))&#123;</span><br><span class="line">                s = s.substring(<span class="number">0</span>,s.length()-<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-LeetCode001：两数之和" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/08/25/LeetCode001%EF%BC%9A%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/" class="article-date">
+  	<time datetime="2022-08-25T14:53:24.159Z" itemprop="datePublished">2022-08-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/08/25/LeetCode001%EF%BC%9A%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">
+        LeetCode001：两数之和
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/two-sum/">1. 两数之和 - 力扣（LeetCode）</a></p>
+<p>时间复杂度为n2的方法，也是最容易想到的方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[] twoSum(<span class="type">int</span>[] nums, <span class="type">int</span> target) &#123;</span><br><span class="line">        <span class="type">int</span>[] result =<span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">2</span>]; </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.length;++i)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=i+<span class="number">1</span>;j&lt;nums.length;++j)&#123;</span><br><span class="line">                <span class="keyword">if</span>((nums[i]+nums[j])==target)&#123;</span><br><span class="line">                    result[<span class="number">0</span>]=i;</span><br><span class="line">                    result[<span class="number">1</span>]=j;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度为n的方法，使用了map，主要是弄清楚map的作用。map中存储的是给定数组中的元素和他的位置编号。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[] twoSum(<span class="type">int</span>[] nums, <span class="type">int</span> target) &#123;</span><br><span class="line">        <span class="type">int</span>[] result =<span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">2</span>]; </span><br><span class="line">        Map&lt;Integer,Integer&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;nums.length; i++)&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> target - nums[i];</span><br><span class="line">            <span class="keyword">if</span>(map.containsKey(temp))&#123;</span><br><span class="line">                result[<span class="number">1</span>] = i;</span><br><span class="line">                result[<span class="number">0</span>] = map.get(temp);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                map.put(nums[i],i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-快速失败机制（fail-fast）" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -609,234 +795,6 @@
 <li>通常SDK是由专业性质的公司提供专业服务的集合，比如提供安卓开发工具、或者基于硬件开发的服务等。也有针对某项软件功能的SDK，如推送技术、图像识别技术、移动支付技术等，同时资源优势类的公司也提供资源共享的SDK，如一些广告SDK提供盈利渠道，分发SDK提供产品下载渠道。</li>
 <li>目前在国内互联网环境中大部分的SDK都是免费的， 为了鼓励开发者使用其系统或者语言，许多 SDK 是免费提供的。软件工程师通常从目标系统开发者那里获得软件开发包，也可以直接从互联网下载，有时也被作为营销手段。例如，营销公司会免费提供构建SDK 以鼓励人们使用它，从而会吸引更多人由于能免费为其编程而购买其构件。</li>
 </ol>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-反转链表" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2022/08/12/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/" class="article-date">
-  	<time datetime="2022-08-12T00:41:03.894Z" itemprop="datePublished">2022-08-12</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/12/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/">
-        反转链表
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>面试快手，手撕代码的时候发现既不是关键代码模式也不是ACM，而是从数据结构开始写起，有点懵。记录在此，一起学习！</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//链表结构体</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ListNode</span>&#123;</span><br><span class="line">    <span class="type">int</span> val;</span><br><span class="line">    ListNode next=<span class="literal">null</span>;</span><br><span class="line">    ListNode(<span class="type">int</span> val)&#123;</span><br><span class="line">        <span class="built_in">this</span>.val = val;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//包括主函数建立链表和关键代码两部分</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">node</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ListNode</span>(<span class="number">0</span>);</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">head</span> <span class="operator">=</span> node ;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">            node.next = <span class="keyword">new</span> <span class="title class_">ListNode</span>(i);</span><br><span class="line">            node = node.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//0 1 2 3 4</span></span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">listNode</span> <span class="operator">=</span> power(head);</span><br><span class="line">        <span class="keyword">while</span>(listNode!=<span class="literal">null</span>)&#123;</span><br><span class="line">            System.out.println(listNode.val);</span><br><span class="line">            listNode=listNode.next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">static</span> ListNode <span class="title function_">power</span><span class="params">(ListNode head)</span>&#123;</span><br><span class="line">        ListNode pre=<span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">while</span>(head!=<span class="literal">null</span>)&#123;</span><br><span class="line">            ListNode temp=head.next;</span><br><span class="line">            head.next=pre;</span><br><span class="line">            pre=head;</span><br><span class="line">            head=temp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span>  pre;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-万叶-辉金盛夏" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2022/08/11/%E4%B8%87%E5%8F%B6-%E8%BE%89%E9%87%91%E7%9B%9B%E5%A4%8F/" class="article-date">
-  	<time datetime="2022-08-11T12:36:38.854Z" itemprop="datePublished">2022-08-11</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/11/%E4%B8%87%E5%8F%B6-%E8%BE%89%E9%87%91%E7%9B%9B%E5%A4%8F/">
-        万叶-辉金盛夏
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>我常在雨中赶路，难免被雨水迷住眼睛，</p>
-<p>有许多次，几乎看不清前方。</p>
-<p>终有一日抵达了山巅，</p>
-<p>自顶峰望去，</p>
-<p>云在脚下，</p>
-<p>耳畔唯有清风袅袅。</p>
-<p>真正的高山，</p>
-<p>真正的空明澄澈之心，</p>
-<p>无我，无恨，无念，无愿。</p>
-<p>踏上旅途吧，我即是清风，再长的路也会有相遇，</p>
-<p>人生尚未结束，何处不是故乡？</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-Java容器" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2022/08/11/Java%E5%AE%B9%E5%99%A8/" class="article-date">
-  	<time datetime="2022-08-11T07:27:46.070Z" itemprop="datePublished">2022-08-11</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/11/Java%E5%AE%B9%E5%99%A8/">
-        Java容器
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1、Java基本数据类型"><a href="#1、Java基本数据类型" class="headerlink" title="1、Java基本数据类型"></a>1、Java基本数据类型</h1><ul>
-<li>byte（1）</li>
-<li>int（4）</li>
-<li>short（2）</li>
-<li>long（8）</li>
-<li>double（8）</li>
-<li>float（4）</li>
-<li>char（2）</li>
-<li>boolean（1）</li>
-</ul>
-<h1 id="2、Java容器"><a href="#2、Java容器" class="headerlink" title="2、Java容器"></a>2、Java容器</h1><h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><p>List中的元素可以重复，有序</p>
-<p>List是接口，ArrayList和LinkedList是实现类</p>
-<p>List的常用操作包括</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">add(object);</span><br><span class="line">remove(object);</span><br><span class="line">get(i);</span><br><span class="line">size();</span><br><span class="line">contains(object);<span class="comment">//是否包含元素</span></span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;list.size();i++)&#123;&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h3><h3 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h3><h2 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h2><p>Set中的元素不可以重复，无序，重复数据添加不进去</p>
-<p>Set是接口，HashSet和TreeSet是实现类</p>
-<p>Set的常用操作包括</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">add(object);</span><br><span class="line">remove(objet);</span><br><span class="line">size();</span><br><span class="line">contains(object);</span><br></pre></td></tr></table></figure>
-
-<h3 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h3><h3 id="TreeSet"><a href="#TreeSet" class="headerlink" title="TreeSet"></a>TreeSet</h3><p>默认进行排序，但不是存储顺序，是大小顺序</p>
-<h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><p>键值对，无序，不重复</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">张三--&gt;13548695742</span><br></pre></td></tr></table></figure>
-
-<p>常用操作</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">put(key,value);</span><br><span class="line">get(key);<span class="comment">//通过key获取到value</span></span><br><span class="line">remove(key);</span><br><span class="line">size();</span><br><span class="line">containsKey();</span><br><span class="line">containsValue();</span><br><span class="line">keySet();<span class="comment">//把Map中的所有键打包成集合返回</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">HashMap</span> <span class="variable">hashMap</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HashMap</span>();</span><br><span class="line">hashMap.put(<span class="string">&quot;jay&quot;</span>,<span class="string">&quot;周杰伦&quot;</span>);</span><br><span class="line">hashMap.put(<span class="string">&quot;wf&quot;</span>,<span class="string">&quot;王菲&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-<p>注意，如果插入key相同的元素，会覆盖掉value</p>
-<h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><h3 id="TreeMap"><a href="#TreeMap" class="headerlink" title="TreeMap"></a>TreeMap</h3><p>根据key排序</p>
-<h2 id="Iterater"><a href="#Iterater" class="headerlink" title="Iterater"></a>Iterater</h2><p>例子</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Set</span> <span class="variable">set</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HashSet</span>();</span><br><span class="line">set.add(<span class="number">123</span>);</span><br><span class="line">set.add(<span class="number">456</span>);</span><br><span class="line">set.add(<span class="number">798</span>);</span><br><span class="line"><span class="type">Iterator</span> <span class="variable">iterator</span> <span class="operator">=</span> set.iterator();</span><br><span class="line"><span class="keyword">while</span>(iterator.hasNext())&#123;</span><br><span class="line">    <span class="type">Object</span> <span class="variable">next</span> <span class="operator">=</span> iterator.next();</span><br><span class="line">    System.out.println(next);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>常用操作</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">next();<span class="comment">//取到下一个元素</span></span><br><span class="line">hasNext();<span class="comment">//判断是否还有下一个元素</span></span><br></pre></td></tr></table></figure>
-
-<p>在Map中拿到的都是Key</p>
-<p>什么是entry？</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">HashMap</span> <span class="variable">map</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HashMap</span>();</span><br><span class="line">map.put(<span class="number">1</span>,<span class="string">&quot;蔡徐坤&quot;</span>);</span><br><span class="line">map.put(<span class="number">2</span>,<span class="string">&quot;鹿晗&quot;</span>);</span><br><span class="line">map.put(<span class="number">3</span>,<span class="string">&quot;吴亦凡&quot;</span>);</span><br><span class="line"><span class="type">Set</span> <span class="variable">set</span> <span class="operator">=</span> map.entrySet();</span><br><span class="line"><span class="type">Iterator</span> <span class="variable">it</span> <span class="operator">=</span> set.iterator();</span><br><span class="line"><span class="keyword">while</span>(it.hasNext())&#123;</span><br><span class="line">Map.<span class="type">Entry</span> <span class="variable">entry</span> <span class="operator">=</span> (Map.Entry) it.next();<span class="comment">//强制类型转换</span></span><br><span class="line">System.out.println(entry.getKey());</span><br><span class="line">System.out.println(entry.getValue());</span><br></pre></td></tr></table></figure>
-
-<h1 id="3、泛型"><a href="#3、泛型" class="headerlink" title="3、泛型"></a>3、泛型</h1><p>List和Set类似</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ArrayList&lt;String&gt; strings = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">strings.add(<span class="string">&quot;a&quot;</span>);</span><br><span class="line">strings.add(<span class="string">&quot;b&quot;</span>);</span><br><span class="line">strings.add(<span class="string">&quot;c&quot;</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> strings.get(<span class="number">1</span>);<span class="comment">//不需要强制类型转换，因为有泛型贴了标签</span></span><br></pre></td></tr></table></figure>
-
-<p>Map</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">HashMap&lt;String, String&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">map.put(<span class="string">&quot;鸣人&quot;</span>,<span class="string">&quot;螺旋丸&quot;</span>);</span><br><span class="line">map.put(<span class="string">&quot;佐助&quot;</span>,<span class="string">&quot;千鸟&quot;</span>);</span><br><span class="line">map.put(<span class="string">&quot;李洛克&quot;</span>,<span class="string">&quot;八门遁甲&quot;</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> map.get(<span class="string">&quot;鸣人&quot;</span>);<span class="comment">//不需要强转</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="4、增强for遍历Map"><a href="#4、增强for遍历Map" class="headerlink" title="4、增强for遍历Map"></a>4、增强for遍历Map</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">HashMap&lt;String, String&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">map.put(<span class="string">&quot;鸣人&quot;</span>,<span class="string">&quot;螺旋丸&quot;</span>);</span><br><span class="line">map.put(<span class="string">&quot;佐助&quot;</span>,<span class="string">&quot;千鸟&quot;</span>);</span><br><span class="line">map.put(<span class="string">&quot;李洛克&quot;</span>,<span class="string">&quot;八门遁甲&quot;</span>);</span><br><span class="line"><span class="keyword">for</span>(Map.Entry&lt;String, String&gt; set : map.entrySet())&#123;</span><br><span class="line">System.out.println(set.getValue());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="5、Collections工具类"><a href="#5、Collections工具类" class="headerlink" title="5、Collections工具类"></a>5、Collections工具类</h1><p>常用方法</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">max();</span><br><span class="line">min();</span><br><span class="line">sort();</span><br><span class="line">shuffle();</span><br></pre></td></tr></table></figure>
-
 
       
     </div>
