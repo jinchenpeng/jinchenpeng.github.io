@@ -155,6 +155,180 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-LeetCode013：罗马数字转整数" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/09/01/LeetCode013%EF%BC%9A%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0/" class="article-date">
+  	<time datetime="2022-09-01T13:41:05.870Z" itemprop="datePublished">2022-09-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/09/01/LeetCode013%EF%BC%9A%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0/">
+        LeetCode013：罗马数字转整数
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/roman-to-integer/">13. 罗马数字转整数 - 力扣（LeetCode）</a></p>
+<p>replace实在是太妙了，每次都能解决很麻烦的问题，记住啦</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">romanToInt</span><span class="params">(String s)</span> &#123;</span><br><span class="line">        s = s.replace(<span class="string">&quot;IV&quot;</span>,<span class="string">&quot;a&quot;</span>);</span><br><span class="line">        s = s.replace(<span class="string">&quot;IX&quot;</span>,<span class="string">&quot;b&quot;</span>);</span><br><span class="line">        s = s.replace(<span class="string">&quot;XL&quot;</span>,<span class="string">&quot;c&quot;</span>);</span><br><span class="line">        s = s.replace(<span class="string">&quot;XC&quot;</span>,<span class="string">&quot;d&quot;</span>);</span><br><span class="line">        s = s.replace(<span class="string">&quot;CD&quot;</span>,<span class="string">&quot;e&quot;</span>);</span><br><span class="line">        s = s.replace(<span class="string">&quot;CM&quot;</span>,<span class="string">&quot;f&quot;</span>);</span><br><span class="line">        <span class="type">int</span> <span class="variable">res</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; s.length(); i++) &#123;</span><br><span class="line">            <span class="keyword">switch</span> (s.charAt(i))&#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;I&#x27;</span> : temp=<span class="number">1</span>;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;V&#x27;</span> : temp=<span class="number">5</span>;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;X&#x27;</span> : temp=<span class="number">10</span>;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;L&#x27;</span> : temp=<span class="number">50</span>;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;C&#x27;</span> : temp=<span class="number">100</span>;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;D&#x27;</span> : temp=<span class="number">500</span>;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;M&#x27;</span> : temp=<span class="number">1000</span>;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;a&#x27;</span> : temp=<span class="number">4</span>;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;b&#x27;</span> : temp=<span class="number">9</span>;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;c&#x27;</span> : temp=<span class="number">40</span>;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;d&#x27;</span> : temp=<span class="number">90</span>;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;e&#x27;</span> : temp=<span class="number">400</span>;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;f&#x27;</span> : temp=<span class="number">900</span>;<span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            res+=temp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-LeetCode021：经典合并有序列表" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/09/01/LeetCode021%EF%BC%9A%E7%BB%8F%E5%85%B8%E5%90%88%E5%B9%B6%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8/" class="article-date">
+  	<time datetime="2022-09-01T13:41:04.863Z" itemprop="datePublished">2022-09-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/09/01/LeetCode021%EF%BC%9A%E7%BB%8F%E5%85%B8%E5%90%88%E5%B9%B6%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8/">
+        LeetCode021：合并有序列表
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/merge-two-sorted-lists/submissions/">21. 合并两个有序链表 - 力扣（LeetCode）</a></p>
+<p>经典题目了，回忆一下，注意返回为list3.next，因为新建列表的第一个结点值默认为0</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * public class ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode next;</span></span><br><span class="line"><span class="comment"> *     ListNode() &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int val) &#123; this.val = val; &#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int val, ListNode next) &#123; this.val = val; this.next = next; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> ListNode <span class="title function_">mergeTwoLists</span><span class="params">(ListNode list1, ListNode list2)</span> &#123;</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">list3</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ListNode</span>();</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">temp</span> <span class="operator">=</span> list3;</span><br><span class="line">        <span class="keyword">while</span>(list1!=<span class="literal">null</span>&amp;&amp;list2!=<span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(list1.val&lt;list2.val)&#123;</span><br><span class="line">                temp.next = list1;</span><br><span class="line">                temp=temp.next;</span><br><span class="line">                list1 = list1.next;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                temp.next = list2;</span><br><span class="line">                temp=temp.next;</span><br><span class="line">                list2 = list2.next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(list1==<span class="literal">null</span>)&#123;</span><br><span class="line">            temp.next = list2;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(list2==<span class="literal">null</span>)&#123;</span><br><span class="line">            temp.next = list1;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> list3.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-LeetCode009：回文数" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/09/01/LeetCode009%EF%BC%9A%E5%9B%9E%E6%96%87%E6%95%B0/" class="article-date">
+  	<time datetime="2022-09-01T13:41:04.786Z" itemprop="datePublished">2022-09-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/09/01/LeetCode009%EF%BC%9A%E5%9B%9E%E6%96%87%E6%95%B0/">
+        LeetCode009：回文数
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/palindrome-number/">9. 回文数 - 力扣（LeetCode）</a></p>
+<p>直接把整型转化成字符型</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isPalindrome</span><span class="params">(<span class="type">int</span> x)</span> &#123;</span><br><span class="line">       <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> Integer.toString(x);</span><br><span class="line">        <span class="type">char</span>[] chars = s.toCharArray();</span><br><span class="line">        <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> s.length()/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;len;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(chars[i]!=chars[s.length()-<span class="number">1</span>-i])&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-LeetCode020：有效的括号" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -603,198 +777,6 @@
 </tbody></table>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Student</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        HashMap&lt;String, String&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        map.put(<span class="string">&quot;东邪&quot;</span>,<span class="string">&quot;36&quot;</span>);</span><br><span class="line">        map.put(<span class="string">&quot;西毒&quot;</span>,<span class="literal">null</span>);</span><br><span class="line">        map.put(<span class="string">&quot;南帝&quot;</span>,<span class="string">&quot;&quot;</span>);</span><br><span class="line">        map.put(<span class="string">&quot;北丐&quot;</span>,<span class="string">&quot;25&quot;</span>);</span><br><span class="line">        map.put(<span class="string">&quot;神通&quot;</span>,<span class="string">&quot;15&quot;</span>);</span><br><span class="line">        map.put(<span class="string">&quot;郭靖&quot;</span>,<span class="string">&quot;25&quot;</span>);</span><br><span class="line"></span><br><span class="line">        HashMap&lt;String, List&gt; resultmap = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span>(Map.Entry&lt;String,String&gt; entry: map.entrySet())&#123;</span><br><span class="line">            <span class="keyword">if</span>(entry.getValue()!=<span class="literal">null</span> &amp;&amp; entry.getValue()!=<span class="string">&quot;&quot;</span> &amp;&amp; Integer.parseInt(entry.getValue())&gt;<span class="number">18</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(resultmap.containsKey(entry.getValue()))&#123;</span><br><span class="line">                    <span class="type">List</span> <span class="variable">list</span> <span class="operator">=</span> resultmap.get(entry.getValue());</span><br><span class="line">                    list.add(entry.getKey());</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    List&lt;String&gt; list1 = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">                    list1.add( entry.getKey());</span><br><span class="line">                    resultmap.put(entry.getValue(),list1);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(resultmap);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-绿皮书经典情书" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2022/08/13/%E7%BB%BF%E7%9A%AE%E4%B9%A6%E7%BB%8F%E5%85%B8%E6%83%85%E4%B9%A6/" class="article-date">
-  	<time datetime="2022-08-13T14:17:25.162Z" itemprop="datePublished">2022-08-13</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/13/%E7%BB%BF%E7%9A%AE%E4%B9%A6%E7%BB%8F%E5%85%B8%E6%83%85%E4%B9%A6/">
-        绿皮书经典情书
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>亲爱的桃乐丝</p>
-<p>当我想起你</p>
-<p>都会记起爱荷华州的美丽平原</p>
-<p>我们之间的距离</p>
-<p>让我灵魂破碎</p>
-<p>对我来说，光阴与经历，少了你毫无意义</p>
-<p>爱上你是我做过最容易的事</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-日本东大教授入学致辞" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2022/08/13/%E6%97%A5%E6%9C%AC%E4%B8%9C%E5%A4%A7%E6%95%99%E6%8E%88%E5%85%A5%E5%AD%A6%E8%87%B4%E8%BE%9E/" class="article-date">
-  	<time datetime="2022-08-13T13:34:52.533Z" itemprop="datePublished">2022-08-13</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/13/%E6%97%A5%E6%9C%AC%E4%B8%9C%E5%A4%A7%E6%95%99%E6%8E%88%E5%85%A5%E5%AD%A6%E8%87%B4%E8%BE%9E/">
-        东京大学教授入学致辞
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>我们常常认为努力就会有回报</p>
-<p>但事实并非完全如此</p>
-<p>你取得的成就很可能是环境的馈赠</p>
-<p>你们之所以能通过努力取得成功</p>
-<p>实际上是整个社会在不断的鼓励你</p>
-<p>把最优质的资源向你们倾斜</p>
-<p>并在过程中给予你们奖励和反馈</p>
-<p>才有了你最后的辉煌呈现</p>
-<p>因此不要标榜自己的“努力”</p>
-<p>一心追逐个人的功成名就</p>
-<p>不要因自己在环境助力下获得成功</p>
-<p>就指责他人的不幸是因为“不够努力”</p>
-<p>请你们向弱者伸出援手</p>
-<p>承认自己的缺陷与局限</p>
-<p>而不是聚焦放大自己的努力和天赋</p>
-<p>让自我与时代互相成就吧</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-什么是SDK" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2022/08/12/%E4%BB%80%E4%B9%88%E6%98%AFSDK/" class="article-date">
-  	<time datetime="2022-08-12T06:42:43.069Z" itemprop="datePublished">2022-08-12</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/12/%E4%BB%80%E4%B9%88%E6%98%AFSDK/">
-        什么是SDK？
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>SDK 就是 Software Development Kit 的缩写，中文意思就是【软件开发工具包】。这是一个覆盖面相当广泛的名词，可以这么说：辅助开发某一类软件的相关文档、范例和工具的集合都可以叫做【SDK】。详细来说</p>
-<ol>
-<li>SDK的外语全称是Software Development Kit，中文为：软件开发工具包，一般都是一些软件工程师为特定的软件包、软件框架、硬件平台、操作系统等建立应用软件时的开发工具的集合；</li>
-<li>可以将其理解为，由第三方服务商提供的实现软件产品某项功能的工具包，里面一般以集合kpi和文档、范例、工具的形式出现，也就是由很多类型文件的集合；</li>
-<li>通常SDK是由专业性质的公司提供专业服务的集合，比如提供安卓开发工具、或者基于硬件开发的服务等。也有针对某项软件功能的SDK，如推送技术、图像识别技术、移动支付技术等，同时资源优势类的公司也提供资源共享的SDK，如一些广告SDK提供盈利渠道，分发SDK提供产品下载渠道。</li>
-<li>目前在国内互联网环境中大部分的SDK都是免费的， 为了鼓励开发者使用其系统或者语言，许多 SDK 是免费提供的。软件工程师通常从目标系统开发者那里获得软件开发包，也可以直接从互联网下载，有时也被作为营销手段。例如，营销公司会免费提供构建SDK 以鼓励人们使用它，从而会吸引更多人由于能免费为其编程而购买其构件。</li>
-</ol>
 
       
     </div>
