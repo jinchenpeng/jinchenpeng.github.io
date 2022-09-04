@@ -155,6 +155,169 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-LeetCode035：搜索插入位置" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/09/04/LeetCode035%EF%BC%9A%E6%90%9C%E7%B4%A2%E6%8F%92%E5%85%A5%E4%BD%8D%E7%BD%AE/" class="article-date">
+  	<time datetime="2022-09-04T10:24:01.775Z" itemprop="datePublished">2022-09-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/09/04/LeetCode035%EF%BC%9A%E6%90%9C%E7%B4%A2%E6%8F%92%E5%85%A5%E4%BD%8D%E7%BD%AE/">
+        LeetCode035：搜索插入位置
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/search-insert-position/">35. 搜索插入位置 - 力扣（LeetCode）</a></p>
+<p>方法一：这方法虽然可以解决这个问题，但时间复杂度不满足题目要求</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">searchInsert</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> target)</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i]&gt;=target) &#123;</span><br><span class="line">                <span class="keyword">return</span> i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> nums.length;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>方法二：二分法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> nums.length;</span><br><span class="line"><span class="type">int</span> <span class="variable">left</span> <span class="operator">=</span> <span class="number">0</span>,right = n-<span class="number">1</span>;</span><br><span class="line"><span class="keyword">while</span>(left&lt;=right)&#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">mid</span> <span class="operator">=</span> (right-left)/<span class="number">2</span>+left;</span><br><span class="line">    <span class="keyword">if</span>(nums[mid]==target) <span class="keyword">return</span> mid;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(nums[mid]&lt;target) left = mid+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span>  right = mid-<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> right+<span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-LeetCode066：加一" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/09/04/LeetCode066%EF%BC%9A%E5%8A%A0%E4%B8%80/" class="article-date">
+  	<time datetime="2022-09-04T10:24:01.772Z" itemprop="datePublished">2022-09-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="title：LeetCode066：加一"><a href="#title：LeetCode066：加一" class="headerlink" title="title：LeetCode066：加一"></a>title：LeetCode066：加一</h2><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/plus-one/">66. 加一 - 力扣（LeetCode）</a></p>
+<p>方法一：思路就是转化为数字加一再拆开为数组返回，这里主要复习BigInteger的用法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.math.BigInteger;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[] plusOne(<span class="type">int</span>[] digits) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">length</span> <span class="operator">=</span> digits.length;</span><br><span class="line">        <span class="type">BigInteger</span> <span class="variable">sum</span> <span class="operator">=</span> BigInteger.valueOf(digits[length-<span class="number">1</span>]);</span><br><span class="line">        <span class="type">BigInteger</span> <span class="variable">temp</span> <span class="operator">=</span> BigInteger.valueOf(<span class="number">10</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=length-<span class="number">2</span>;i&gt;=<span class="number">0</span>;i--) &#123;</span><br><span class="line">            sum = temp.multiply(BigInteger.valueOf(digits[i])).add(sum);</span><br><span class="line">            temp = temp.multiply(BigInteger.valueOf(<span class="number">10</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">BigInteger</span> <span class="variable">sum1</span> <span class="operator">=</span> sum.add(<span class="keyword">new</span> <span class="title class_">BigInteger</span>(<span class="string">&quot;1&quot;</span>));</span><br><span class="line">        <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> String.valueOf(sum1);</span><br><span class="line">        <span class="type">char</span>[] chars = s.toCharArray();</span><br><span class="line">        <span class="type">int</span> <span class="variable">length1</span> <span class="operator">=</span> chars.length;</span><br><span class="line">        <span class="type">int</span>[] res = <span class="keyword">new</span> <span class="title class_">int</span>[length1];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; length1; i++) &#123;</span><br><span class="line">            res[i] =chars[i]-<span class="number">48</span> ;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span>  res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-LeetCode058：最后一个单词的长度" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/09/04/LeetCode058%EF%BC%9A%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E5%8D%95%E8%AF%8D%E7%9A%84%E9%95%BF%E5%BA%A6/" class="article-date">
+  	<time datetime="2022-09-04T10:24:01.770Z" itemprop="datePublished">2022-09-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/09/04/LeetCode058%EF%BC%9A%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E5%8D%95%E8%AF%8D%E7%9A%84%E9%95%BF%E5%BA%A6/">
+        LeetCode058：最后一个单词的长度
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/length-of-last-word/">58. 最后一个单词的长度 - 力扣（LeetCode）</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//split方法有个神奇的地方，比如说ni hao hi jie  .jie后边有空格是不会划分的.但是ni  hao  shi jie.前边的空格就会划分。</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">lengthOfLastWord</span><span class="params">(String s)</span> &#123;</span><br><span class="line">        String[] word= s.split(<span class="string">&quot; &quot;</span>);</span><br><span class="line">        s = word[word.length - <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">return</span> s.length();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-LeetCode013：罗马数字转整数" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -562,220 +725,6 @@
 
 <p>正确处理方法就是使用Iterator</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test01</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        HashMap&lt;String, String&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        map.put(<span class="string">&quot;张三&quot;</span>,<span class="string">&quot;22&quot;</span>);</span><br><span class="line">        map.put(<span class="string">&quot;李四&quot;</span>,<span class="string">&quot;20&quot;</span>);</span><br><span class="line">        map.put(<span class="string">&quot;王五&quot;</span>,<span class="string">&quot;23&quot;</span>);</span><br><span class="line">        map.put(<span class="string">&quot;小马&quot;</span>,<span class="string">&quot;24&quot;</span>);</span><br><span class="line">        map.put(<span class="string">&quot;小米&quot;</span>,<span class="string">&quot;25&quot;</span>);</span><br><span class="line"></span><br><span class="line">        Set&lt;Map.Entry&lt;String, String&gt;&gt; set = map.entrySet();</span><br><span class="line">        Iterator&lt;Map.Entry&lt;String, String&gt;&gt; it = set.iterator();</span><br><span class="line">        <span class="keyword">while</span>(it.hasNext())&#123;</span><br><span class="line">            Map.Entry&lt;String, String&gt; next = it.next();</span><br><span class="line">            <span class="keyword">if</span>(next.getValue().equals(<span class="string">&quot;20&quot;</span>))&#123;</span><br><span class="line">                it.remove();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(map);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-Java员工管理系统" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2022/08/25/Java%E5%91%98%E5%B7%A5%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" class="article-date">
-  	<time datetime="2022-08-24T17:31:11.261Z" itemprop="datePublished">2022-08-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/25/Java%E5%91%98%E5%B7%A5%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/">
-        Java简单员工管理系统
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>雇员类</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Emp</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Emp [empNo=&quot;</span> + empNo + <span class="string">&quot;, name=&quot;</span> + name + <span class="string">&quot;, salary=&quot;</span> + salary + <span class="string">&quot;]&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String empNo;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">float</span> salary;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Emp</span><span class="params">(String empNo, String name, <span class="type">float</span> salary)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.empNo = empNo;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">        <span class="built_in">this</span>.salary = salary;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getEmpNo</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> empNo;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setEmpNo</span><span class="params">(String empNo)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.empNo = empNo;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">float</span> <span class="title function_">getSalary</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> salary;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setSalary</span><span class="params">(<span class="type">float</span> salary)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.salary = salary;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>雇员管理类</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"></span><br><span class="line"><span class="comment">//雇员管理类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">EmpManage</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">ArrayList</span> <span class="variable">al</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 构造</span></span><br><span class="line">    EmpManage() &#123;</span><br><span class="line">        al = <span class="keyword">new</span> <span class="title class_">ArrayList</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 添加员工</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">AddEmp</span><span class="params">(Emp emp)</span> &#123;</span><br><span class="line">        al.add(emp);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 删除员工</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">removeEmp</span><span class="params">(String empNo)</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; al.size(); i++) &#123;</span><br><span class="line">            <span class="type">Emp</span> <span class="variable">emp</span> <span class="operator">=</span> (Emp) al.get(i);</span><br><span class="line">            <span class="keyword">if</span> (emp.getEmpNo().equals(empNo)) &#123;</span><br><span class="line">                al.remove(emp);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 显示员工信息</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">showEmpInfo</span><span class="params">(String empNo)</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; al.size(); i++) &#123;</span><br><span class="line">            <span class="type">Emp</span> <span class="variable">emp</span> <span class="operator">=</span> (Emp) al.get(i);</span><br><span class="line">            <span class="comment">// java 中字符串双等是比较地址等不等，因为String也是个引用类型</span></span><br><span class="line">            <span class="keyword">if</span> (emp.getEmpNo().equals(empNo)) &#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;get emp info&quot;</span> + emp.toString());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 修改工资</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">updateEmpSalary</span><span class="params">(String empNo, <span class="type">float</span> newSalary)</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; al.size(); i++) &#123;</span><br><span class="line">            <span class="type">Emp</span> <span class="variable">emp</span> <span class="operator">=</span> (Emp) al.get(i);</span><br><span class="line">            <span class="keyword">if</span> (emp.getEmpNo().equals(empNo)) &#123;</span><br><span class="line">                emp.setSalary(newSalary);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>主函数</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.BufferedReader;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStreamReader;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] str)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="type">EmpManage</span> <span class="variable">empManager</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">EmpManage</span>();</span><br><span class="line"></span><br><span class="line">        <span class="type">BufferedReader</span> <span class="variable">br</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">InputStreamReader</span>(System.in));</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;请选择你要进行的操作&quot;</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;1.添加员工雇员&quot;</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;2.查找雇员&quot;</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;3.修改雇员工资&quot;</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;4.删除雇员&quot;</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;5.退出系统&quot;</span>);</span><br><span class="line">            <span class="type">String</span> <span class="variable">type</span> <span class="operator">=</span> br.readLine();</span><br><span class="line">            String empNo;</span><br><span class="line">            String name;</span><br><span class="line">            <span class="type">float</span> salary;</span><br><span class="line">            <span class="keyword">switch</span> (Integer.parseInt(type)) &#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                    System.out.println(<span class="string">&quot;请输入员工编号&quot;</span>);</span><br><span class="line">                    empNo = br.readLine();</span><br><span class="line">                    System.out.println(<span class="string">&quot;请输入员工姓名&quot;</span>);</span><br><span class="line">                    name = br.readLine();</span><br><span class="line">                    System.out.println(<span class="string">&quot;请输入员工工资&quot;</span>);</span><br><span class="line">                    salary = Float.parseFloat(br.readLine());</span><br><span class="line"></span><br><span class="line">                    <span class="type">Emp</span> <span class="variable">emp</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Emp</span>(empNo, name, salary);</span><br><span class="line">                    empManager.AddEmp(emp);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                    System.out.println(<span class="string">&quot;请输入员工编号&quot;</span>);</span><br><span class="line">                    empNo = br.readLine();</span><br><span class="line">                    empManager.showEmpInfo(empNo);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">                    System.out.println(<span class="string">&quot;请输入员工编号&quot;</span>);</span><br><span class="line">                    empNo = br.readLine();</span><br><span class="line">                    System.out.println(<span class="string">&quot;请输入员工工资&quot;</span>);</span><br><span class="line">                    salary = Float.parseFloat(br.readLine());</span><br><span class="line">                    empManager.updateEmpSalary(empNo, salary);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">                    System.out.println(<span class="string">&quot;请输入员工编号&quot;</span>);</span><br><span class="line">                    empNo = br.readLine();</span><br><span class="line">                    empManager.removeEmp(empNo);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">                    System.out.println(<span class="string">&quot;退出系统&quot;</span>);</span><br><span class="line">                    System.exit(<span class="number">0</span>);;</span><br><span class="line">                <span class="keyword">default</span>:</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-Map遍历方式" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2022/08/18/Map%E9%81%8D%E5%8E%86%E6%96%B9%E5%BC%8F/" class="article-date">
-  	<time datetime="2022-08-18T15:15:25.990Z" itemprop="datePublished">2022-08-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/18/Map%E9%81%8D%E5%8E%86%E6%96%B9%E5%BC%8F/">
-        Map遍历的三种方式
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>新建一个map</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">HashMap&lt;String, String&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">map.put(<span class="string">&quot;张三&quot;</span>,<span class="string">&quot;25&quot;</span>);</span><br><span class="line">map.put(<span class="string">&quot;李四&quot;</span>,<span class="string">&quot;26&quot;</span>);</span><br><span class="line">map.put(<span class="string">&quot;王五&quot;</span>,<span class="string">&quot;27&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-<p>方式一：增强for</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(Map.Entry&lt;String, String&gt; set : map.entrySet())&#123;</span><br><span class="line">    System.out.println(set.getValue());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>方式二：迭代器</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Set&lt;Map.Entry&lt;String, String&gt;&gt; set = map.entrySet();</span><br><span class="line">Iterator&lt;Map.Entry&lt;String, String&gt;&gt; it = set.iterator();</span><br><span class="line"><span class="keyword">while</span>(it.hasNext())&#123;</span><br><span class="line">    Map.Entry&lt;String, String&gt; next = it.next();</span><br><span class="line">    System.out.println(next.getKey());</span><br><span class="line">    System.out.println(next.getValue());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>方式三：兰姆达表达式</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">map.forEach((key,value)-&gt;&#123;</span><br><span class="line">    System.out.println(key +<span class="string">&quot;  &quot;</span>+ value);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-分组小算法" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2022/08/18/%E5%88%86%E7%BB%84%E5%B0%8F%E7%AE%97%E6%B3%95/" class="article-date">
-  	<time datetime="2022-08-18T14:02:08.247Z" itemprop="datePublished">2022-08-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/18/%E5%88%86%E7%BB%84%E5%B0%8F%E7%AE%97%E6%B3%95/">
-        分组小算法
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一个班有很多学生，学生具有姓名、年龄等属性，其中某些学生的年龄为空，请按照年龄进行分组，讲年龄为空或者小于18岁的学生剔除，剩余的学生按照年龄进行分组，年龄相等的为一组。最终打印分组信息。</p>
-<table>
-<thead>
-<tr>
-<th>姓名</th>
-<th>年龄</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>东邪</td>
-<td>36</td>
-</tr>
-<tr>
-<td>西毒</td>
-<td>null</td>
-</tr>
-<tr>
-<td>南帝</td>
-<td>“”</td>
-</tr>
-<tr>
-<td>北丐</td>
-<td>25</td>
-</tr>
-<tr>
-<td>神通</td>
-<td>15</td>
-</tr>
-<tr>
-<td>郭靖</td>
-<td>25</td>
-</tr>
-</tbody></table>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Student</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        HashMap&lt;String, String&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        map.put(<span class="string">&quot;东邪&quot;</span>,<span class="string">&quot;36&quot;</span>);</span><br><span class="line">        map.put(<span class="string">&quot;西毒&quot;</span>,<span class="literal">null</span>);</span><br><span class="line">        map.put(<span class="string">&quot;南帝&quot;</span>,<span class="string">&quot;&quot;</span>);</span><br><span class="line">        map.put(<span class="string">&quot;北丐&quot;</span>,<span class="string">&quot;25&quot;</span>);</span><br><span class="line">        map.put(<span class="string">&quot;神通&quot;</span>,<span class="string">&quot;15&quot;</span>);</span><br><span class="line">        map.put(<span class="string">&quot;郭靖&quot;</span>,<span class="string">&quot;25&quot;</span>);</span><br><span class="line"></span><br><span class="line">        HashMap&lt;String, List&gt; resultmap = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span>(Map.Entry&lt;String,String&gt; entry: map.entrySet())&#123;</span><br><span class="line">            <span class="keyword">if</span>(entry.getValue()!=<span class="literal">null</span> &amp;&amp; entry.getValue()!=<span class="string">&quot;&quot;</span> &amp;&amp; Integer.parseInt(entry.getValue())&gt;<span class="number">18</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(resultmap.containsKey(entry.getValue()))&#123;</span><br><span class="line">                    <span class="type">List</span> <span class="variable">list</span> <span class="operator">=</span> resultmap.get(entry.getValue());</span><br><span class="line">                    list.add(entry.getKey());</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    List&lt;String&gt; list1 = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">                    list1.add( entry.getKey());</span><br><span class="line">                    resultmap.put(entry.getValue(),list1);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(resultmap);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
       
