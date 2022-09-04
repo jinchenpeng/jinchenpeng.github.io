@@ -229,10 +229,23 @@
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/09/04/LeetCode066%EF%BC%9A%E5%8A%A0%E4%B8%80/">
+        LeetCode066：加一
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
-<h2 id="title：LeetCode066：加一"><a href="#title：LeetCode066：加一" class="headerlink" title="title：LeetCode066：加一"></a>title：LeetCode066：加一</h2><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/plus-one/">66. 加一 - 力扣（LeetCode）</a></p>
+        <p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/plus-one/">66. 加一 - 力扣（LeetCode）</a></p>
 <p>方法一：思路就是转化为数字加一再拆开为数组返回，这里主要复习BigInteger的用法。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.math.BigInteger;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[] plusOne(<span class="type">int</span>[] digits) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">length</span> <span class="operator">=</span> digits.length;</span><br><span class="line">        <span class="type">BigInteger</span> <span class="variable">sum</span> <span class="operator">=</span> BigInteger.valueOf(digits[length-<span class="number">1</span>]);</span><br><span class="line">        <span class="type">BigInteger</span> <span class="variable">temp</span> <span class="operator">=</span> BigInteger.valueOf(<span class="number">10</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=length-<span class="number">2</span>;i&gt;=<span class="number">0</span>;i--) &#123;</span><br><span class="line">            sum = temp.multiply(BigInteger.valueOf(digits[i])).add(sum);</span><br><span class="line">            temp = temp.multiply(BigInteger.valueOf(<span class="number">10</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">BigInteger</span> <span class="variable">sum1</span> <span class="operator">=</span> sum.add(<span class="keyword">new</span> <span class="title class_">BigInteger</span>(<span class="string">&quot;1&quot;</span>));</span><br><span class="line">        <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> String.valueOf(sum1);</span><br><span class="line">        <span class="type">char</span>[] chars = s.toCharArray();</span><br><span class="line">        <span class="type">int</span> <span class="variable">length1</span> <span class="operator">=</span> chars.length;</span><br><span class="line">        <span class="type">int</span>[] res = <span class="keyword">new</span> <span class="title class_">int</span>[length1];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; length1; i++) &#123;</span><br><span class="line">            res[i] =chars[i]-<span class="number">48</span> ;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span>  res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
